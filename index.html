@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.7;
             color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(to right, #fff4e6, #ffe5b4);
             min-height: 100vh;
         }
         
@@ -36,36 +36,91 @@
             overflow: hidden;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-        }
-        
         .header h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -1px;
-            position: relative;
-            z-index: 1;
         }
         
-        .header .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
-        }
+        .header .subtitle { font-size: 1.3rem; opacity: 0.95; font-weight: 400; color: #e6f0ff; }
         
         .content {
             padding: 3rem;
+        }
+        
+        .section {
+            margin: 4rem 0;
+            scroll-margin-top: 2rem;
+        }
+        
+        h2 {
+            color: #2a5298;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        h3 {
+    color: #2a5298;
+    font-size: 1.9rem;
+    margin: 2.5rem 0 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 5px solid;
+    border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+h3:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: #764ba2;
+}
+h4 { color: #1e3c72; font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 700; }
+p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border-left: 5px solid #f39c12;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.1);
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border-left: 5px solid #17a2b8;
+            box-shadow: 0 8px 25px rgba(23, 162, 184, 0.1);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 1.1rem;
+            margin: 1rem 0 2rem 0;
+            font-weight: 500;
         }
         
         .toc {
@@ -83,6 +138,8 @@
             font-size: 1.5rem;
             border-bottom: 2px solid #2a5298;
             padding-bottom: 0.5rem;
+            border-left: none;
+            padding-left: 0;
         }
         
         .toc ul {
@@ -112,71 +169,16 @@
             transform: translateX(10px);
         }
         
-        .section {
-            margin: 4rem 0;
-            scroll-margin-top: 2rem;
-        }
-        
-        h2 {
-            color: #2a5298;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 0.5rem;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        h3 {
-            color: #34495e;
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1.5rem 0;
-            padding-left: 1rem;
-            border-left: 4px solid #2a5298;
-        }
-        
-        h4 {
-            color: #495057;
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem 0;
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            text-align: justify;
-            color: #555;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            border-left: 5px solid #f39c12;
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.1);
-        }
-        
-        .info-box {
-            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            border-left: 5px solid #17a2b8;
-            box-shadow: 0 8px 25px rgba(23, 162, 184, 0.1);
-        }
-        
         .architecture-diagram {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .architecture-diagram img { max-width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        
             text-align: center;
             margin: 3rem 0;
             padding: 2rem;
@@ -223,7 +225,6 @@
         
         .comparison-table tr:hover {
             background: #e3f2fd;
-            transform: scale(1.01);
             transition: all 0.3s ease;
         }
         
@@ -264,14 +265,6 @@
             border-left: none;
             margin: 0 0 1rem 0;
             padding: 0;
-        }
-        
-        .footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
         }
         
         .data-flow {
@@ -355,6 +348,14 @@
             margin: 2rem 0;
         }
         
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
         @media (max-width: 768px) {
             .header h1 { font-size: 2.5rem; }
             .content { padding: 1.5rem; }
@@ -369,20 +370,60 @@
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <!-- Intro Page -->
+        <div class="intro-page" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; padding: 2rem;">
+            <div style="background: white; border-radius: 20px; padding: 3rem; max-width: 600px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <div style="width: 200px; height: 200px; border-radius: 50%; background: #e0e0e0; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 5px solid #2a5298;">
+                    <!-- Replace this div with your actual image -->
+                    <img src="https://raw.githubusercontent.com/siddhantsid2199/Fundamentals-of-Data-Engineering-HTML-Page-/adb7adba81b798082284f39e1732928fbd1519f9/1713582454820.jpg" alt="Siddhant Singh" style="width: 100%; height: 100%; object-fit: cover;" />
+                    
+                </div>
+                <h1 style="color: #2a5298; font-size: 2.5rem; margin-bottom: 1rem;">Siddhant Singh</h1>
+                <h2 style="color: #666; font-size: 1.5rem; margin-bottom: 2rem; font-weight: 400;">Data Professional</h2>
+                <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    Welcome to my comprehensive guide on Data Engineering fundamentals. This document covers essential concepts, architectures, and technologies that form the backbone of modern data engineering systems.
+                </p>
+                <a href="https://www.linkedin.com/in/siddhantsingh21/" target="_blank" style="display: inline-block; background: #0077b5; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                    Connect on LinkedIn
+                </a>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+                    <a href="#main-content" style="color: #2a5298; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                        Start Reading →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <header class="header" id="main-content">
             <h1>Fundamentals of Data Engineering</h1>
             <p class="subtitle">A Comprehensive Guide to Modern Data Architecture, Workflows, and Technologies</p>
         </header>
 
         <main class="content">
+            <!-- Introduction -->
+            <section id="introduction" class="section">
+                <h2>Introduction to Data Engineering</h2>
+                
+                <p>Data Engineering serves as the foundational discipline that bridges the gap between raw data collection and actionable business intelligence. While data science focuses on extracting insights and patterns from processed data, data engineering concentrates on building robust, scalable infrastructure that makes analytics possible in the first place.</p>
+                
+                <p>In today's data-driven landscape, organizations face exponentially growing volumes of information arriving at unprecedented velocities from diverse sources. Data engineers design and maintain the critical systems that ingest, process, store, and serve this data, ensuring seamless flow from operational systems to analytical platforms. Their work enables data scientists, analysts, and business users to access clean, reliable data for decision-making.</p>
+
+                <p>The modern data engineering paradigm emphasizes automation, scalability, and reliability. Engineers build pipelines that can handle batch and streaming data, implement data quality controls, and ensure that data governance requirements are met throughout the entire data lifecycle.</p>
+                
+                <div class="highlight-box">
+                    <h4>Why Data Engineering is Essential</h4>
+                    <p>Data Engineering provides <strong>structured, relational data architecture</strong> that transforms raw, unstructured information into refined, accessible datasets. This structured approach enables organizations to derive meaningful insights and make data-driven decisions effectively.</p>
+                </div>
+            </section>
+
             <!-- Table of Contents -->
             <div class="toc">
                 <h3>Table of Contents</h3>
                 <ul>
-                    <li><a href="#introduction">Introduction to Data Engineering</a></li>
                     <li><a href="#data-workflow">Data Engineering Workflow</a></li>
                     <li><a href="#oltp-vs-olap">OLTP vs OLAP Systems</a></li>
                     <li><a href="#etl-processes">ETL Processes & Data Warehousing</a></li>
+                    <li><a href="#incremental-loading">Incremental Loading (Data Fetching Strategy)</a></li>
                     <li><a href="#dimensional-modeling">Dimensional Modeling</a></li>
                     <li><a href="#scd">Slowly Changing Dimensions</a></li>
                     <li><a href="#data-lakes">Data Lakes vs Data Warehouses</a></li>
@@ -392,21 +433,6 @@
                     <li><a href="#azure-stack">Azure Data Engineering Stack</a></li>
                 </ul>
             </div>
-
-            <!-- Introduction -->
-            <section id="introduction" class="section">
-                <h2>Introduction to Data Engineering</h2>
-                <div class="highlight-box">
-                    <h4>Why Data Engineering is Essential</h4>
-                    <p>Data Engineering provides <strong>structured, relational data architecture</strong> that transforms raw, unstructured information into refined, accessible datasets. This structured approach enables organizations to derive meaningful insights and make data-driven decisions effectively.</p>
-                </div>
-                
-                <p>Data Engineering serves as the foundational discipline that bridges the gap between raw data collection and actionable business intelligence. While data science focuses on extracting insights and patterns from processed data, data engineering concentrates on building robust, scalable infrastructure that makes analytics possible in the first place.</p>
-                
-                <p>In today's data-driven landscape, organizations face exponentially growing volumes of information arriving at unprecedented velocities from diverse sources. Data engineers design and maintain the critical systems that ingest, process, store, and serve this data, ensuring seamless flow from operational systems to analytical platforms. Their work enables data scientists, analysts, and business users to access clean, reliable data for decision-making.</p>
-
-                <p>The modern data engineering paradigm emphasizes automation, scalability, and reliability. Engineers build pipelines that can handle batch and streaming data, implement data quality controls, and ensure that data governance requirements are met throughout the entire data lifecycle.</p>
-            </section>
 
             <!-- Data Engineering Workflow -->
             <section id="data-workflow" class="section">
@@ -430,45 +456,45 @@
                 </div>
 
                 <h3>Data Production (Generation)</h3>
-                <p>Data originates from numerous sources within modern organizations, each presenting unique challenges and requirements for collection and initial processing:</p>
+                <div class="section-subtitle">( Data generated from multiple sources and could be in any format )</div>
                 
                 <div class="tech-stack">
                     <div class="tech-card">
-                        <h4>Web Applications</h4>
-                        <p>Capture user interactions, clickstream data, session information, and behavioral analytics from web platforms and mobile applications.</p>
+                        <h4>Websites</h4>
+                        <p>User interactions, clickstream data, session information, and behavioral analytics from web platforms and mobile applications.</p>
                     </div>
                     <div class="tech-card">
                         <h4>Streaming Platforms</h4>
-                        <p>Process real-time data streams from IoT devices, sensors, application logs, and event-driven architectures requiring immediate processing.</p>
+                        <p>Real-time data streams from IoT devices, sensors, application logs, and event-driven architectures requiring immediate processing.</p>
                     </div>
                     <div class="tech-card">
-                        <h4>Application Programming Interfaces</h4>
-                        <p>Extract data from external services, third-party applications, and microservices through RESTful APIs, GraphQL endpoints, and webhook integrations.</p>
+                        <h4>APIs</h4>
+                        <p>Data retrieved from external services, third-party applications, and microservices through RESTful APIs and webhook integrations.</p>
                     </div>
                     <div class="tech-card">
-                        <h4>Database Systems</h4>
-                        <p>Extract information from operational databases, legacy systems, and transactional processing systems that power day-to-day business operations.</p>
+                        <h4>Databases</h4>
+                        <p>Information extracted from operational databases, legacy systems, and transactional processing systems that power business operations.</p>
                     </div>
                 </div>
 
                 <h3>Data Transformation</h3>
-                <p>The transformation layer represents the core of data engineering work, where raw data undergoes systematic processing to become analysis-ready:</p>
+                <div class="section-subtitle">( Raw data is cleaned, processed, and transformed into structured format )</div>
                 
                 <ul>
-                    <li><strong>Database Administrators (DBAs)</strong> - Optimize database performance, manage schemas, ensure data integrity, and maintain system health across various database technologies.</li>
-                    <li><strong>Data Engineers</strong> - Design and implement transformation pipelines, establish data quality controls, and build scalable processing frameworks that handle growing data volumes.</li>
-                    <li><strong>Data Processing Operations</strong> - Execute business rules, perform data validation, handle error scenarios, and ensure compliance with regulatory requirements.</li>
-                    <li><strong>Storage Architecture</strong> - Implement appropriate data models, partitioning strategies, and indexing schemes optimized for analytical workloads.</li>
+                    <li><strong>Database Administrators (DBAs)</strong> - Manage and optimize database performance, ensure data integrity, and maintain system health across various database technologies</li>
+                    <li><strong>Data Engineers</strong> - Design transformation pipelines, establish data quality controls, and build scalable processing frameworks</li>
+                    <li><strong>Data Processing Operations</strong> - Execute business rules, perform validation, handle error scenarios, and ensure regulatory compliance</li>
+                    <li><strong>Storage Architecture</strong> - Implement data models, partitioning strategies, and indexing schemes optimized for analytical workloads</li>
                 </ul>
 
                 <h3>Data Serving</h3>
-                <p>The serving layer ensures that processed data is accessible, performant, and tailored to specific use cases and user needs:</p>
+                <div class="section-subtitle">( Final data is served to stakeholders for analysis and decision-making )</div>
                 
                 <ul>
-                    <li><strong>Performance-Optimized Storage</strong> - Implement columnar storage formats, compression algorithms, and caching strategies for rapid query execution.</li>
-                    <li><strong>Data Modeling</strong> - Design dimensional models, denormalized structures, and aggregated tables that support specific analytical requirements.</li>
-                    <li><strong>Query Optimization</strong> - Create indexes, materialized views, and partitioning schemes that minimize query latency and maximize throughput.</li>
-                    <li><strong>Business Intelligence Integration</strong> - Enable seamless connections to reporting tools, dashboard platforms, and self-service analytics environments.</li>
+                    <li><strong>Performance-Optimized Storage</strong> - Implement columnar storage formats, compression algorithms, and caching strategies for rapid query execution</li>
+                    <li><strong>Data Modeling</strong> - Design dimensional models, denormalized structures, and aggregated tables for specific analytical requirements</li>
+                    <li><strong>Query Optimization</strong> - Create indexes, materialized views, and partitioning schemes that minimize latency and maximize throughput</li>
+                    <li><strong>Business Intelligence Integration</strong> - Enable connections to reporting tools, dashboard platforms, and self-service analytics environments</li>
                 </ul>
             </section>
 
@@ -477,7 +503,7 @@
                 <h2>OLTP vs OLAP Systems</h2>
                 
                 <div class="info-box">
-                    <p><strong>Understanding the architectural distinction between OLTP and OLAP systems is fundamental to effective data engineering.</strong> OLTP systems excel at processing high-volume transactional workloads with strong consistency requirements, while OLAP systems are optimized for complex analytical queries across large datasets with flexible schema designs.</p>
+                    <p><strong>Understanding the fundamental difference:</strong> OLTP systems excel at processing high-volume transactional workloads with strong consistency requirements, while OLAP systems are optimized for complex analytical queries across large datasets with flexible schema designs.</p>
                 </div>
 
                 <table class="comparison-table">
@@ -491,54 +517,36 @@
                     <tbody>
                         <tr>
                             <td><strong>Primary Purpose</strong></td>
-                            <td>Process real-time transactions and maintain operational data integrity</td>
-                            <td>Enable complex analytical queries and support strategic decision-making processes</td>
+                            <td>Handle day-to-day transactions and maintain operational data integrity</td>
+                            <td>Support business intelligence and analytical queries for decision-making</td>
                         </tr>
                         <tr>
                             <td><strong>Data Organization</strong></td>
-                            <td>Row-oriented storage (CSV, AVRO) optimized for frequent updates and inserts</td>
-                            <td>Column-oriented storage optimized for aggregations and analytical operations</td>
+                            <td>Row-based storage (CSV, AVRO) optimized for frequent updates and inserts</td>
+                            <td>Column-based storage optimized for aggregations and analytical operations</td>
                         </tr>
                         <tr>
                             <td><strong>Query Patterns</strong></td>
                             <td>Short-duration, high-frequency transactions with predictable access patterns</td>
-                            <td>Long-running, complex analytical queries involving joins and aggregations across large datasets</td>
+                            <td>Complex analytical queries involving joins and aggregations across large datasets</td>
                         </tr>
                         <tr>
                             <td><strong>Schema Design</strong></td>
                             <td>Highly normalized (3NF) structures to eliminate redundancy and ensure consistency</td>
-                            <td>Denormalized designs (Star/Snowflake schemas) prioritizing query performance over storage efficiency</td>
+                            <td>Denormalized designs (Star/Snowflake schemas) prioritizing query performance</td>
                         </tr>
                         <tr>
-                            <td><strong>Typical Applications</strong></td>
-                            <td>E-commerce transactions, financial systems, inventory management, customer relationship management</td>
-                            <td>Business intelligence dashboards, data mining operations, trend analysis, predictive modeling</td>
+                            <td><strong>Use Cases</strong></td>
+                            <td>E-commerce transactions, financial systems, inventory management, CRM systems</td>
+                            <td>Business intelligence, data mining, trend analysis, predictive modeling</td>
                         </tr>
                         <tr>
                             <td><strong>Data Scope</strong></td>
-                            <td>Current operational data with focus on recent transactions and active records</td>
-                            <td>Historical data spanning multiple time periods for trend analysis and comparative studies</td>
+                            <td>Current operational data focused on recent transactions and active records</td>
+                            <td>Historical data spanning multiple time periods for trend and comparative analysis</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <h3>OLTP System Characteristics</h3>
-                <ul>
-                    <li><strong>High Concurrency:</strong> Support thousands of simultaneous users performing concurrent transactions</li>
-                    <li><strong>ACID Compliance:</strong> Ensure Atomicity, Consistency, Isolation, and Durability for all transactions</li>
-                    <li><strong>Low Latency:</strong> Provide sub-second response times for transactional operations</li>
-                    <li><strong>Data Integrity:</strong> Maintain strict referential integrity and business rule enforcement</li>
-                    <li><strong>Real-time Processing:</strong> Handle immediate updates to reflect current business state</li>
-                </ul>
-
-                <h3>OLAP System Characteristics</h3>
-                <ul>
-                    <li><strong>Analytical Optimization:</strong> Designed for complex calculations, aggregations, and data mining operations</li>
-                    <li><strong>Dimensional Modeling:</strong> Implement star and snowflake schemas for efficient analytical queries</li>
-                    <li><strong>Historical Data Storage:</strong> Maintain extensive historical datasets for trend analysis and forecasting</li>
-                    <li><strong>Batch Processing:</strong> Optimize for periodic bulk data loading and transformation operations</li>
-                    <li><strong>Query Flexibility:</strong> Support ad-hoc queries and exploratory data analysis workflows</li>
-                </ul>
             </section>
 
             <!-- ETL Processes -->
@@ -605,142 +613,339 @@
                     <div class="caption">Modern Data Pipeline Architecture Flow</div>
                 </div>
 
-                <h3>ETL Process Overview</h3>
-                <p>Extract, Transform, Load (ETL) represents the fundamental data integration pattern that moves information from diverse source systems into centralized analytical platforms. This three-phase approach ensures data consistency, quality, and accessibility for business intelligence applications.</p>
+                <h3>Data Warehouse Architecture Layers</h3>
+                <p>The concept happens in layers. The first one is staging layer where the data will be extracted from OLTP source and put into staging layer in raw form. Now there are two options in staging as well:</p>
 
+                <div class="architecture-diagram">
+                    <svg class="architecture-svg" viewBox="0 0 800 280">
+                        <defs>
+                            <linearGradient id="source-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="staging-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#E65100;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="transient-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#F44336;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#C62828;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="persistent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#6A1B9A;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="core-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <text x="400" y="20" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Data Warehouse Architecture Flow</text>
+                        
+                        <!-- Source Systems -->
+                        <rect x="50" y="80" width="140" height="100" rx="10" fill="url(#source-grad)" />
+                        <text x="120" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="16">OLTP Sources</text>
+                        <text x="120" y="130" text-anchor="middle" fill="white" font-size="12">• Databases</text>
+                        <text x="120" y="145" text-anchor="middle" fill="white" font-size="12">• APIs</text>
+                        <text x="120" y="160" text-anchor="middle" fill="white" font-size="12">• Files</text>
+                        
+                        <!-- Staging Layer -->
+                        <rect x="250" y="50" width="180" height="160" rx="10" fill="url(#staging-grad)" />
+                        <text x="340" y="75" text-anchor="middle" fill="white" font-weight="bold" font-size="16">STAGING LAYER</text>
+                        <text x="340" y="95" text-anchor="middle" fill="white" font-size="12">Raw Data Extraction</text>
+                        
+                        <!-- Transient Box -->
+                        <rect x="270" y="110" width="70" height="50" rx="8" fill="url(#transient-grad)" />
+                        <text x="305" y="130" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Transient</text>
+                        <text x="305" y="143" text-anchor="middle" fill="white" font-size="9">Temporary store</text>
+                        <text x="305" y="154" text-anchor="middle" fill="white" font-size="9">Used 99% time</text>
+                        
+                        <!-- Persistent Box -->
+                        <rect x="350" y="110" width="70" height="50" rx="8" fill="url(#persistent-grad)" />
+                        <text x="385" y="130" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Persistent</text>
+                        <text x="385" y="143" text-anchor="middle" fill="white" font-size="9">Preserve Data</text>
+                        <text x="385" y="154" text-anchor="middle" fill="white" font-size="9">Store & Update History</text>
+                        
+                        <!-- Options Text -->
+                        <text x="340" y="180" text-anchor="middle" fill="white" font-size="10">Choose storage approach</text>
+                        <text x="340" y="195" text-anchor="middle" fill="white" font-size="10">based on requirements</text>
+                        
+                        <!-- Core Integration Layer -->
+                        <rect x="490" y="80" width="160" height="100" rx="10" fill="url(#core-grad)" />
+                        <text x="570" y="110" text-anchor="middle" fill="white" font-weight="bold" font-size="16">CORE INTEGRATION</text>
+                        <text x="570" y="130" text-anchor="middle" fill="white" font-size="12">• Transform Data</text>
+                        <text x="570" y="145" text-anchor="middle" fill="white" font-size="12">• Dimensional Modeling</text>
+                        <text x="570" y="160" text-anchor="middle" fill="white" font-size="12">• Business Rules</text>
+                        
+                        <!-- Flow Arrows -->
+                        <defs>
+                            <marker id="flow-arrow" markerWidth="12" markerHeight="8" 
+                             refX="11" refY="4" orient="auto">
+                                <polygon points="0 0, 12 4, 0 8" fill="#2c3e50" />
+                            </marker>
+                        </defs>
+                        
+                        <line x1="195" y1="130" x2="245" y2="130" stroke="#2c3e50" stroke-width="4" marker-end="url(#flow-arrow)" />
+                        <line x1="435" y1="130" x2="485" y2="130" stroke="#2c3e50" stroke-width="4" marker-end="url(#flow-arrow)" />
+                        
+                        <!-- Stage Labels -->
+                        <text x="120" y="40" text-anchor="middle" font-weight="bold" font-size="14" fill="#2c3e50">Extract</text>
+                        <text x="340" y="40" text-anchor="middle" font-weight="bold" font-size="14" fill="#2c3e50">Stage</text>
+                        <text x="570" y="40" text-anchor="middle" font-weight="bold" font-size="14" fill="#2c3e50">Transform</text>
+                    </svg>
+                    <div class="caption">Three-layer architecture: Source extraction → Staging (with storage options) → Core transformation</div>
+                </div>
+
+                <h4>Staging Layer: Raw Data Landing Zone</h4>
                 <div class="tech-stack">
-                    <div class="tech-card">
-                        <h4>Extract Phase</h4>
-                        <p><strong>Data Acquisition:</strong> Systematically retrieve data from heterogeneous sources including relational databases, APIs, file systems, and streaming platforms. Handle incremental extractions, full refreshes, and real-time change data capture depending on source system capabilities and business requirements.</p>
+                    <div class="tech-card" style="border-left: 5px solid #F44336;">
+                        <h4>Transient Storage (Used 99% time)</h4>
+                        <p><strong>Temporary store:</strong> The first layer is Transient layer meaning it will temporary store the data and will truncate tomorrow as I am not saving this data. This approach minimizes storage costs and is used in most implementations.</p>
                     </div>
-                    <div class="tech-card">
-                        <h4>Transform Phase</h4>
-                        <p><strong>Data Processing:</strong> Apply comprehensive data cleansing, validation, normalization, and business rule implementation. Perform data type conversions, handle missing values, resolve data conflicts, and apply complex business logic to ensure analytical datasets meet quality standards.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Load Phase</h4>
-                        <p><strong>Data Integration:</strong> Efficiently load processed data into target systems using optimized bulk loading techniques. Implement proper indexing, partitioning, and compression strategies while maintaining data lineage and ensuring minimal impact on system performance.</p>
+                    <div class="tech-card" style="border-left: 5px solid #9C27B0;">
+                        <h4>Persistent Storage</h4>
+                        <p><strong>Preserve Data & Store History:</strong> The other layer is Persistent where I will preserve the data and keep updating the history. This approach enables data reprocessing and audit trails.</p>
                     </div>
                 </div>
 
-                <h3>Data Warehouse Architecture Layers</h3>
-                <p>Enterprise data warehouses implement layered architectures that separate concerns and optimize different aspects of data processing and consumption:</p>
+                <h4>Core Integration Layer: Transformation Hub</h4>
+                <p>Then comes the second layer which is called core integration layer where we will transform the data and dimensional data model will come into picture.</p>
+            </section>
 
-                <h4>Staging Layer</h4>
-                <ul>
-                    <li><strong>Temporary Data Storage:</strong> Provide isolated environment for initial data validation and cleansing operations</li>
-                    <li><strong>Error Handling:</strong> Implement comprehensive error detection, logging, and recovery mechanisms</li>
-                    <li><strong>Data Quality Assessment:</strong> Perform initial data profiling and quality assessments before core integration</li>
-                    <li><strong>Transformation Workspace:</strong> Enable complex data transformations without impacting production systems</li>
-                </ul>
+            <!-- Incremental Loading -->
+            <section id="incremental-loading" class="section">
+                <h2>Incremental Loading (Data Fetching Strategy)</h2>
+                
+                <p>Incremental loading is a data fetching strategy that processes only new or changed data rather than reprocessing the entire dataset. This approach significantly reduces processing time, storage requirements, and system resources while maintaining data accuracy and completeness.</p>
 
-                <h4>Core Integration Layer</h4>
-                <ul>
-                    <li><strong>Integrated Data Repository:</strong> Maintain single source of truth with consistent data definitions and relationships</li>
-                    <li><strong>Dimensional Modeling:</strong> Implement star and snowflake schemas optimized for analytical query performance</li>
-                    <li><strong>Historical Data Management:</strong> Preserve data history and enable time-based analysis across multiple periods</li>
-                    <li><strong>Master Data Management:</strong> Maintain authoritative versions of key business entities and reference data</li>
-                </ul>
+                <h3>Incremental Loading Example</h3>
+                <p>Consider a sales data table with daily quantity information. Instead of reloading all historical data every time new data arrives, incremental loading processes only the new records.</p>
 
-                <h4>Data Mart Layer</h4>
-                <ul>
-                    <li><strong>Subject-Area Focus:</strong> Provide specialized, department-specific views of enterprise data</li>
-                    <li><strong>Performance Optimization:</strong> Pre-calculate frequently used metrics and implement targeted indexing strategies</li>
-                    <li><strong>User-Centric Design:</strong> Organize data according to specific business processes and analytical workflows</li>
-                    <li><strong>Controlled Access:</strong> Implement role-based security and data governance policies at granular levels</li>
-                </ul>
+                <h4>Initial Data Load (Already Fetched):</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>01 Jan 2023</td><td>150</td></tr>
+                        <tr><td>02 Jan 2023</td><td>200</td></tr>
+                        <tr><td>03 Jan 2023</td><td>175</td></tr>
+                        <tr><td>...</td><td>...</td></tr>
+                        <tr><td>30 Dec 2023</td><td>280</td></tr>
+                        <tr><td>31 Dec 2023</td><td>320</td></tr>
+                        <tr><td>01 Jan 2024</td><td>180</td></tr>
+                    </tbody>
+                </table>
+
+                <h4>New Data Arrives:</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #d4edda;"><td>02 Jan 2024</td><td>250</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <h4>Incremental Loading Process</h4>
+                    <p><strong>Question:</strong> Now we have data from 01 Jan 2023 to 01 Jan 2024 and this data is already fetched. Now suppose one more date is added 02 Jan 2024. Will I add all the data?</p>
+                    <p><strong>Answer:</strong> NO! I will take only 02 Jan 2024 to staging and core area. This is called incremental loading.</p>
+                </div>
             </section>
 
             <!-- Dimensional Modeling -->
             <section id="dimensional-modeling" class="section">
                 <h2>Dimensional Modeling</h2>
                 
-                <div class="highlight-box">
-                    <h4>Incremental Loading Strategy</h4>
-                    <p><strong>Incremental processing approach:</strong> Rather than performing complete data refreshes, modern data warehouses implement incremental loading patterns. For example, when processing January 2nd data, the system selectively processes only the new information, updating staging and core layers efficiently while maintaining data consistency and minimizing system resources.</p>
+                <p>Dimensional modeling is a data design technique used to optimize databases for analytical queries and reporting. This approach organizes data into facts (measurable business events) and dimensions (descriptive context), creating intuitive structures that mirror how business users think about their data.</p>
+
+                <h3>Core Concepts</h3>
+                
+                <h4>Fact Tables</h4>
+                <div class="tech-card" style="border-left: 5px solid #2196F3;">
+                    <p><strong>What are Fact Tables?</strong> Fact tables contain quantitative business metrics and measurements. They store the "numbers" of business processes - the measurable events that occur in business operations.</p>
+                    
+                    <h5>Characteristics:</h5>
+                    <ul>
+                        <li><strong>Quantitative Data:</strong> Sales amounts, quantities, durations, counts, ratios</li>
+                        <li><strong>Foreign Keys:</strong> References to related dimension tables</li>
+                        <li><strong>Additive Measures:</strong> Metrics that can be summed across dimensions</li>
+                        <li><strong>Large Volume:</strong> Typically contain millions or billions of records</li>
+                    </ul>
                 </div>
 
-                <h3>Star Schema Design Principles</h3>
-                <p>Dimensional modeling organizes analytical data into intuitive, performance-optimized structures that mirror how business users think about their data. This approach creates star-like patterns where central fact tables connect to multiple dimension tables, enabling efficient analytical queries.</p>
+                <h4>Dimension Tables</h4>
+                <div class="tech-card" style="border-left: 5px solid #FF9800;">
+                    <p><strong>What are Dimension Tables?</strong> Dimension tables contain descriptive attributes that provide context for the facts. They answer the "who, what, when, where, why, and how" questions about business events.</p>
+                    
+                    <h5>Characteristics:</h5>
+                    <ul>
+                        <li><strong>Descriptive Attributes:</strong> Names, descriptions, categories, hierarchies</li>
+                        <li><strong>Smaller Volume:</strong> Fewer records compared to fact tables</li>
+                        <li><strong>Wide Tables:</strong> Many columns with descriptive information</li>
+                        <li><strong>Surrogate Keys:</strong> System-generated unique identifiers</li>
+                    </ul>
+                </div>
 
-                <h4>Fact Tables: The Analytical Foundation</h4>
-                <ul>
-                    <li><strong>Quantitative Business Metrics:</strong> Store measurable business events such as sales amounts, quantities, durations, and counts</li>
-                    <li><strong>Foreign Key Integration:</strong> Maintain references to related dimension tables through surrogate key relationships</li>
-                    <li><strong>Additive Measures:</strong> Focus on metrics that can be meaningfully aggregated across different dimensions</li>
-                    <li><strong>Grain Definition:</strong> Establish clear granularity levels that determine the level of detail captured in each record</li>
-                    <li><strong>Historical Tracking:</strong> Maintain transaction-level detail to support drill-down analysis and audit requirements</li>
-                </ul>
+                <h3>Star Schema</h3>
+                <p>Star schema is the simplest dimensional modeling approach where a central fact table is directly connected to multiple dimension tables, creating a star-like structure.</p>
 
-                <h4>Dimension Tables: Business Context</h4>
-                <ul>
-                    <li><strong>Descriptive Attributes:</strong> Provide rich, textual context that describes the "who, what, when, where, why" of business events</li>
-                    <li><strong>Hierarchical Relationships:</strong> Support drill-down analysis through natural business hierarchies like geography, time, and product categories</li>
-                    <li><strong>Slowly Changing Dimensions:</strong> Handle attribute changes over time while maintaining historical accuracy</li>
-                    <li><strong>Surrogate Keys:</strong> Use system-generated keys to maintain referential integrity independent of source system changes</li>
-                    <li><strong>Conformed Dimensions:</strong> Share common dimensions across multiple fact tables to enable cross-subject analysis</li>
-                </ul>
-
-                <h3>E-commerce Analytics Example</h3>
                 <div class="architecture-diagram">
-                    <svg class="architecture-svg" viewBox="0 0 800 500">
+                    <svg class="architecture-svg" viewBox="0 0 800 600">
                         <defs>
-                            <linearGradient id="dim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
-                            </linearGradient>
                             <linearGradient id="fact-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
                                 <stop offset="100%" style="stop-color:#FFE0B2;stop-opacity:1" />
                             </linearGradient>
+                            <linearGradient id="dim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
+                            </linearGradient>
                         </defs>
                         
-                        <!-- Center Fact Table -->
-                        <rect x="325" y="200" width="150" height="100" rx="5" fill="url(#fact-grad)" stroke="#FF8F00" stroke-width="2"/>
-                        <text x="400" y="225" text-anchor="middle" font-weight="bold" font-size="14" fill="#E65100">FACT_Sales</text>
-                        <text x="340" y="245" font-size="10" fill="#BF360C">• SalesID</text>
-                        <text x="340" y="260" font-size="10" fill="#BF360C">• CustomerID (FK)</text>
-                        <text x="340" y="275" font-size="10" fill="#BF360C">• ProductID (FK)</text>
-                        <text x="340" y="290" font-size="10" fill="#BF360C">• DateID (FK)</text>
+                        <!-- Title -->
+                        <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Star Schema Structure</text>
                         
-                        <!-- Top Left - Customer -->
-                        <rect x="50" y="50" width="140" height="80" rx="5" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
-                        <text x="120" y="75" text-anchor="middle" font-weight="bold" font-size="12" fill="#0D47A1">DIM_Customer</text>
-                        <text x="60" y="90" font-size="9" fill="#1565C0">• CustomerID</text>
-                        <text x="60" y="102" font-size="9" fill="#1565C0">• Name, Address</text>
-                        <text x="60" y="114" font-size="9" fill="#1565C0">• Segment, Region</text>
+                        <!-- Central Fact Table -->
+                        <rect x="300" y="250" width="200" height="120" rx="8" fill="url(#fact-grad)" stroke="#FF8F00" stroke-width="3"/>
+                        <text x="400" y="275" text-anchor="middle" font-weight="bold" font-size="16" fill="#E65100">FACT_Sales</text>
+                        <text x="320" y="295" font-size="11" fill="#BF360C">• SalesID (PK)</text>
+                        <text x="320" y="310" font-size="11" fill="#BF360C">• CustomerID (FK)</text>
+                        <text x="320" y="325" font-size="11" fill="#BF360C">• ProductID (FK)</text>
+                        <text x="320" y="340" font-size="11" fill="#BF360C">• DateID (FK)</text>
+                        <text x="320" y="355" font-size="11" fill="#BF360C">• Quantity, Revenue</text>
                         
-                        <!-- Top Right - Product -->
-                        <rect x="610" y="50" width="140" height="80" rx="5" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
-                        <text x="680" y="75" text-anchor="middle" font-weight="bold" font-size="12" fill="#0D47A1">DIM_Product</text>
-                        <text x="620" y="90" font-size="9" fill="#1565C0">• ProductID</text>
-                        <text x="620" y="102" font-size="9" fill="#1565C0">• Name, Category</text>
-                        <text x="620" y="114" font-size="9" fill="#1565C0">• Brand, Price</text>
+                        <!-- Top Left - Customer Dimension -->
+                        <rect x="50" y="80" width="160" height="100" rx="8" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
+                        <text x="130" y="105" text-anchor="middle" font-weight="bold" font-size="14" fill="#0D47A1">DIM_Customer</text>
+                        <text x="70" y="125" font-size="10" fill="#1565C0">• CustomerID (PK)</text>
+                        <text x="70" y="140" font-size="10" fill="#1565C0">• Customer_Name</text>
+                        <text x="70" y="155" font-size="10" fill="#1565C0">• Address</text>
+                        <text x="70" y="170" font-size="10" fill="#1565C0">• Segment</text>
                         
-                        <!-- Bottom Left - Date -->
-                        <rect x="50" y="370" width="140" height="80" rx="5" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
-                        <text x="120" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#0D47A1">DIM_Date</text>
-                        <text x="60" y="410" font-size="9" fill="#1565C0">• DateID</text>
-                        <text x="60" y="422" font-size="9" fill="#1565C0">• Date, Month</text>
-                        <text x="60" y="434" font-size="9" fill="#1565C0">• Quarter, Year</text>
+                        <!-- Top Right - Product Dimension -->
+                        <rect x="590" y="80" width="160" height="100" rx="8" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
+                        <text x="670" y="105" text-anchor="middle" font-weight="bold" font-size="14" fill="#0D47A1">DIM_Product</text>
+                        <text x="610" y="125" font-size="10" fill="#1565C0">• ProductID (PK)</text>
+                        <text x="610" y="140" font-size="10" fill="#1565C0">• Product_Name</text>
+                        <text x="610" y="155" font-size="10" fill="#1565C0">• Category</text>
+                        <text x="610" y="170" font-size="10" fill="#1565C0">• Brand</text>
                         
-                        <!-- Bottom Right - Store -->
-                        <rect x="610" y="370" width="140" height="80" rx="5" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
-                        <text x="680" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#0D47A1">DIM_Store</text>
-                        <text x="620" y="410" font-size="9" fill="#1565C0">• StoreID</text>
-                        <text x="620" y="422" font-size="9" fill="#1565C0">• Name, Location</text>
-                        <text x="620" y="434" font-size="9" fill="#1565C0">• Region, Type</text>
+                        <!-- Bottom Left - Date Dimension -->
+                        <rect x="50" y="420" width="160" height="100" rx="8" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
+                        <text x="130" y="445" text-anchor="middle" font-weight="bold" font-size="14" fill="#0D47A1">DIM_Date</text>
+                        <text x="70" y="465" font-size="10" fill="#1565C0">• DateID (PK)</text>
+                        <text x="70" y="480" font-size="10" fill="#1565C0">• Full_Date</text>
+                        <text x="70" y="495" font-size="10" fill="#1565C0">• Month_Name</text>
+                        <text x="70" y="510" font-size="10" fill="#1565C0">• Quarter</text>
+                        
+                        <!-- Bottom Right - Store Dimension -->
+                        <rect x="590" y="420" width="160" height="100" rx="8" fill="url(#dim-grad)" stroke="#1976D2" stroke-width="2"/>
+                        <text x="670" y="445" text-anchor="middle" font-weight="bold" font-size="14" fill="#0D47A1">DIM_Store</text>
+                        <text x="610" y="465" font-size="10" fill="#1565C0">• StoreID (PK)</text>
+                        <text x="610" y="480" font-size="10" fill="#1565C0">• Store_Name</text>
+                        <text x="610" y="495" font-size="10" fill="#1565C0">• Location</text>
+                        <text x="610" y="510" font-size="10" fill="#1565C0">• Region</text>
                         
                         <!-- Connection Lines -->
-                        <line x1="190" y1="120" x2="350" y2="220" stroke="#666" stroke-width="2"/>
-                        <line x1="610" y1="120" x2="450" y2="220" stroke="#666" stroke-width="2"/>
-                        <line x1="190" y1="390" x2="350" y2="280" stroke="#666" stroke-width="2"/>
-                        <line x1="610" y1="390" x2="450" y2="280" stroke="#666" stroke-width="2"/>
+                        <line x1="210" y1="150" x2="320" y2="270" stroke="#666" stroke-width="2"/>
+                        <line x1="590" y1="150" x2="480" y2="270" stroke="#666" stroke-width="2"/>
+                        <line x1="210" y1="450" x2="320" y2="350" stroke="#666" stroke-width="2"/>
+                        <line x1="590" y1="450" x2="480" y2="350" stroke="#666" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="400" y="570" text-anchor="middle" font-weight="bold" font-size="14" fill="#666">Central Fact Table connected directly to Dimension Tables</text>
+                    </svg>
+                    <div class="caption">Star Schema: Central fact table surrounded by dimension tables in a star pattern</div>
+                </div>
+
+                <h3>Snowflake Schema</h3>
+                <p>Snowflake schema extends the star schema by normalizing dimension tables into multiple related tables, creating a snowflake-like structure with branching hierarchies.</p>
+
+                <div class="architecture-diagram">
+                    <svg class="architecture-svg" viewBox="0 0 800 600">
+                        <defs>
+                            <linearGradient id="fact-snow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFF3E0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFE0B2;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="dim-snow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="subdim-snow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFECB3;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
                         
                         <!-- Title -->
-                        <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="16" fill="#333">E-commerce Sales Analysis - Star Schema</text>
+                        <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Snowflake Schema Structure</text>
+                        
+                        <!-- Central Fact Table -->
+                        <rect x="300" y="250" width="200" height="100" rx="8" fill="url(#fact-snow)" stroke="#FF8F00" stroke-width="3"/>
+                        <text x="400" y="275" text-anchor="middle" font-weight="bold" font-size="16" fill="#E65100">FACT_Sales</text>
+                        <text x="320" y="295" font-size="11" fill="#BF360C">• SalesID</text>
+                        <text x="320" y="310" font-size="11" fill="#BF360C">• ProductID (FK)</text>
+                        <text x="320" y="325" font-size="11" fill="#BF360C">• CustomerID (FK)</text>
+                        <text x="320" y="340" font-size="11" fill="#BF360C">• Quantity, Revenue</text>
+                        
+                        <!-- Product Dimension -->
+                        <rect x="550" y="120" width="140" height="80" rx="6" fill="url(#dim-snow)" stroke="#4CAF50" stroke-width="2"/>
+                        <text x="620" y="145" text-anchor="middle" font-weight="bold" font-size="12" fill="#2E7D32">DIM_Product</text>
+                        <text x="570" y="160" font-size="9" fill="#388E3C">• ProductID</text>
+                        <text x="570" y="175" font-size="9" fill="#388E3C">• Product_Name</text>
+                        <text x="570" y="190" font-size="9" fill="#388E3C">• CategoryID (FK)</text>
+                        
+                        <!-- Category Sub-dimension -->
+                        <rect x="550" y="20" width="140" height="70" rx="6" fill="url(#subdim-snow)" stroke="#FFA000" stroke-width="2"/>
+                        <text x="620" y="45" text-anchor="middle" font-weight="bold" font-size="12" fill="#F57C00">DIM_Category</text>
+                        <text x="570" y="60" font-size="9" fill="#EF6C00">• CategoryID</text>
+                        <text x="570" y="75" font-size="9" fill="#EF6C00">• Category_Name</text>
+                        
+                        <!-- Customer Dimension -->
+                        <rect x="80" y="120" width="140" height="80" rx="6" fill="url(#dim-snow)" stroke="#4CAF50" stroke-width="2"/>
+                        <text x="150" y="145" text-anchor="middle" font-weight="bold" font-size="12" fill="#2E7D32">DIM_Customer</text>
+                        <text x="100" y="160" font-size="9" fill="#388E3C">• CustomerID</text>
+                        <text x="100" y="175" font-size="9" fill="#388E3C">• Customer_Name</text>
+                        <text x="100" y="190" font-size="9" fill="#388E3C">• RegionID (FK)</text>
+                        
+                        <!-- Region Sub-dimension -->
+                        <rect x="80" y="20" width="140" height="70" rx="6" fill="url(#subdim-snow)" stroke="#FFA000" stroke-width="2"/>
+                        <text x="150" y="45" text-anchor="middle" font-weight="bold" font-size="12" fill="#F57C00">DIM_Region</text>
+                        <text x="100" y="60" font-size="9" fill="#EF6C00">• RegionID</text>
+                        <text x="100" y="75" font-size="9" fill="#EF6C00">• Region_Name</text>
+                        
+                        <!-- Date Dimension -->
+                        <rect x="300" y="420" width="200" height="80" rx="6" fill="url(#dim-snow)" stroke="#4CAF50" stroke-width="2"/>
+                        <text x="400" y="445" text-anchor="middle" font-weight="bold" font-size="12" fill="#2E7D32">DIM_Date</text>
+                        <text x="320" y="460" font-size="9" fill="#388E3C">• DateID, Full_Date</text>
+                        <text x="320" y="475" font-size="9" fill="#388E3C">• Month, Quarter, Year</text>
+                        <text x="320" y="490" font-size="9" fill="#388E3C">• Day_Name, Holiday_Flag</text>
+                        
+                        <!-- Connection Lines -->
+                        <line x1="220" y1="160" x2="300" y2="280" stroke="#666" stroke-width="2"/>
+                        <line x1="550" y1="160" x2="500" y2="280" stroke="#666" stroke-width="2"/>
+                        <line x1="400" y1="350" x2="400" y2="420" stroke="#666" stroke-width="2"/>
+                        
+                        <!-- Normalized connections -->
+                        <line x1="150" y1="120" x2="150" y2="90" stroke="#FF6B35" stroke-width="2" stroke-dasharray="5,5"/>
+                        <line x1="620" y1="120" x2="620" y2="90" stroke="#FF6B35" stroke-width="2" stroke-dasharray="5,5"/>
+                        
+                        <!-- Labels -->
+                        <text x="260" y="110" font-size="10" fill="#FF6B35" font-weight="bold">Normalized</text>
+                        <text x="530" y="110" font-size="10" fill="#FF6B35" font-weight="bold">Normalized</text>
+                        <text x="400" y="570" text-anchor="middle" font-weight="bold" font-size="14" fill="#666">Normalized dimension tables create snowflake-like branches</text>
                     </svg>
-                    <div class="caption">Star Schema structure showing fact table relationships with dimension tables</div>
+                    <div class="caption">Snowflake Schema: Normalized dimension tables create hierarchical sub-dimensions</div>
                 </div>
             </section>
 
@@ -749,102 +954,85 @@
                 <h2>Slowly Changing Dimensions (SCD)</h2>
                 
                 <div class="info-box">
-                    <p><strong>Managing Dimensional Changes Over Time:</strong> Slowly Changing Dimensions refer to dimension attributes that evolve over time, presenting unique challenges for maintaining analytical accuracy. Organizations must choose appropriate strategies based on business requirements, regulatory compliance needs, and analytical use cases.</p>
+                    <p><strong>Managing Dimensional Changes Over Time:</strong> Slowly Changing Dimensions are categorical attributes that change over time, and managing that change is very hard to handle. Organizations must choose appropriate strategies based on business requirements and compliance needs.</p>
                 </div>
 
-                <p>Slowly Changing Dimensions (SCDs) represent one of the most critical design decisions in dimensional modeling. Different business scenarios require different approaches to handling attribute changes, each with distinct implications for storage requirements, query complexity, and historical analysis capabilities.</p>
-
-                <h3>SCD Type 0: Static Dimensions</h3>
-                <div class="tech-card" style="border-left: 5px solid #6c757d;">
-                    <h4>Immutable Attributes</h4>
-                    <ul>
-                        <li><strong>Fixed Values:</strong> Attributes that never change throughout their lifecycle</li>
-                        <li><strong>Natural Keys:</strong> Social security numbers, birth dates, and other permanent identifiers</li>
-                        <li><strong>Implementation:</strong> No special handling required; values remain constant after initial load</li>
-                        <li><strong>Use Cases:</strong> Regulatory compliance, audit requirements, and unchangeable business facts</li>
-                    </ul>
-                </div>
-
-                <h3>SCD Type 1: Overwrite Strategy</h3>
-                <div class="tech-card" style="border-left: 5px solid #28a745;">
-                    <h4>Current State Tracking</h4>
-                    <ul>
-                        <li><strong>Simple Updates:</strong> Replace old values with new values using UPSERT operations</li>
-                        <li><strong>No History:</strong> Previous values are permanently lost after updates</li>
-                        <li><strong>Storage Efficient:</strong> Maintains minimal storage footprint with no historical versioning</li>
-                        <li><strong>Best For:</strong> Error corrections, data cleansing, and attributes where history is not required</li>
-                    </ul>
-                    
-                    <h5>Example Scenario:</h5>
-                    <table class="comparison-table" style="margin-top: 1rem;">
-                        <thead>
-                            <tr><th>Product ID</th><th>Product Name</th><th>Category</th><th>Status</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>Premium Honey</td><td>Food & Beverage</td><td>Current</td></tr>
-                            <tr><td>2</td><td>Cotton T-Shirt</td><td>Apparel</td><td>Current</td></tr>
-                            <tr><td>3</td><td>Hair Comb</td><td>Personal Care → Beauty</td><td>Updated</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>SCD Type 2: Historical Preservation</h3>
-                <div class="tech-card" style="border-left: 5px solid #007bff;">
-                    <h4>Complete Change History</h4>
-                    <ul>
-                        <li><strong>Version Control:</strong> Create new records for each significant attribute change</li>
-                        <li><strong>Temporal Tracking:</strong> Use effective start and end dates to define validity periods</li>
-                        <li><strong>Current Indicators:</strong> Flag active records for efficient current-state queries</li>
-                        <li><strong>Analytical Power:</strong> Enable time-based analysis and historical trend reporting</li>
-                    </ul>
-                    
-                    <h5>Comprehensive Example:</h5>
-                    <table class="comparison-table" style="margin-top: 1rem;">
-                        <thead>
-                            <tr><th>Surrogate Key</th><th>Product ID</th><th>Product Name</th><th>Category</th><th>Effective Start</th><th>Effective End</th><th>Current Record</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1001</td><td>1</td><td>Premium Honey</td><td>Food & Beverage</td><td>2024-01-01</td><td>2024-12-31</td><td>Yes</td></tr>
-                            <tr><td>1002</td><td>2</td><td>Cotton T-Shirt</td><td>Apparel</td><td>2024-01-01</td><td>2024-12-31</td><td>Yes</td></tr>
-                            <tr><td>1003</td><td>3</td><td>Hair Comb</td><td>Personal Care</td><td>2024-01-01</td><td>2024-11-30</td><td>No</td></tr>
-                            <tr><td>1004</td><td>3</td><td>Hair Comb</td><td>Beauty & Wellness</td><td>2024-12-01</td><td>2024-12-31</td><td>Yes</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>SCD Type 3: Previous Value Storage</h3>
-                <div class="tech-card" style="border-left: 5px solid #ffc107;">
-                    <h4>Limited Historical Context</h4>
-                    <ul>
-                        <li><strong>Dual Values:</strong> Store both current and immediately previous attribute values</li>
-                        <li><strong>Simple Comparisons:</strong> Enable before-and-after analysis without complex joins</li>
-                        <li><strong>Storage Compromise:</strong> Balance between historical tracking and storage efficiency</li>
-                        <li><strong>Limited Scope:</strong> Suitable when only recent changes are analytically relevant</li>
-                    </ul>
-                    
-                    <h5>Implementation Example:</h5>
-                    <table class="comparison-table" style="margin-top: 1rem;">
-                        <thead>
-                            <tr><th>Product ID</th><th>Product Name</th><th>Current Category</th><th>Previous Category</th><th>Change Date</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>1</td><td>Premium Honey</td><td>Food & Beverage</td><td>Food & Beverage</td><td>-</td></tr>
-                            <tr><td>2</td><td>Cotton T-Shirt</td><td>Apparel</td><td>Apparel</td><td>-</td></tr>
-                            <tr><td>3</td><td>Hair Comb</td><td>Beauty & Wellness</td><td>Personal Care</td><td>2024-12-01</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>SCD Strategy Selection Criteria</h3>
-                <p>Choosing the appropriate SCD strategy depends on several key factors:</p>
+                <h3>SCD Type 0: No Change</h3>
                 <ul>
-                    <li><strong>Business Requirements:</strong> Determine whether historical analysis is necessary for business decisions</li>
-                    <li><strong>Regulatory Compliance:</strong> Consider audit requirements and legal obligations for data retention</li>
-                    <li><strong>Storage Constraints:</strong> Evaluate available storage capacity and associated costs</li>
-                    <li><strong>Query Performance:</strong> Assess impact on query complexity and execution times</li>
-                    <li><strong>Data Volume:</strong> Consider the frequency of changes and total dimension size</li>
-                    <li><strong>User Experience:</strong> Balance analytical capabilities with query complexity for end users</li>
+                    <li>Dimension table will not be changing</li>
+                    <li>Used for static attributes like date of birth, social security numbers</li>
+                    <li>Once loaded, data remains unchanged</li>
                 </ul>
+
+                <h3>SCD Type 1: Overwrite</h3>
+                <ul>
+                    <li>Simply overwrite the old data with new data</li>
+                    <li>No historical tracking</li>
+                    <li>Uses UPSERT operations (Update + Insert)</li>
+                    <li>It will do the update and insert operation</li>
+                </ul>
+
+                <h4>Type 1 Example:</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Product ID</th><th>Name</th><th>Category</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Honey</td><td>Food</td></tr>
+                        <tr><td>2</td><td>Shirt</td><td>Clothing</td></tr>
+                        <tr><td>3</td><td>Comb</td><td>Clothing → Hair</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>SCD Type 2: Preserve History with Dates</h3>
+                <ul>
+                    <li>To keep history from Jan to Dec 30 comb was clothing and then it changed to hair. I want to preserve the history</li>
+                    <li>Add new entries with effective start and end dates</li>
+                    <li>Preserves complete change history</li>
+                    <li>Most commonly used approach for historical tracking</li>
+                </ul>
+
+                <h4>Type 2 Example:</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Product ID</th><th>Name</th><th>Category</th><th>Effective Start Date</th><th>Effective End Date</th><th>In Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Honey</td><td>Food</td><td>1/1/2024</td><td>1/1/3000</td><td>Yes</td></tr>
+                        <tr><td>2</td><td>Shirt</td><td>Clothing</td><td>1/1/2024</td><td>1/1/3000</td><td>Yes</td></tr>
+                        <tr><td>3</td><td>Comb</td><td>Clothing</td><td>1/1/2024</td><td>1/12/2024</td><td>No</td></tr>
+                        <tr><td>4</td><td>Comb</td><td>Hair</td><td>1/2/2024</td><td>1/1/3000</td><td>Yes</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>SCD Type 3: Preserve Previous Value</h3>
+                <ul>
+                    <li>It will just preserve the previous value and not history at time and all</li>
+                    <li>Store both current and previous values in the same record</li>
+                    <li>Limited historical tracking (only previous value)</li>
+                    <li>Good way to preserve the history without date column</li>
+                </ul>
+
+                <h4>Type 3 Example:</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr><th>Product ID</th><th>Name</th><th>Current Category</th><th>Previous Category</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Honey</td><td>Food</td><td>Food</td></tr>
+                        <tr><td>2</td><td>Shirt</td><td>Clothing</td><td>Clothing</td></tr>
+                        <tr><td>3</td><td>Comb</td><td>Hair</td><td>Clothing</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <h4>Summary</h4>
+                    <ul>
+                        <li><strong>Type 0:</strong> No change</li>
+                        <li><strong>Type 1:</strong> Preserve history with Date</li>
+                        <li><strong>Type 3:</strong> Preserve previous value</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Data Lakes vs Data Warehouses -->
@@ -852,65 +1040,120 @@
                 <h2>Data Lakes vs Data Warehouses</h2>
                 
                 <div class="highlight-box">
-                    <h4>Evolution Toward Lake House Architecture</h4>
-                    <p><strong>The convergence of data lakes and warehouses:</strong> Rather than replacing traditional data warehouses, modern architectures embrace a <strong>Lake House</strong> approach that combines the schema flexibility and cost-effectiveness of data lakes with the performance optimization and governance capabilities of data warehouses.</p>
+                    <h4>Are we replacing Data Warehouse with Data Lake?</h4>
+                    <p><strong>Not exactly, but in a way we are improving it.</strong> In data warehouse, we can contain structured data but with data lake we can have semi-structured and unstructured data as well.</p>
+                </div>
+
+                <div class="architecture-diagram">
+                    <svg class="architecture-svg" viewBox="0 0 800 300">
+                        <defs>
+                            <linearGradient id="lake-storage" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Data Lake Container -->
+                        <rect x="550" y="100" width="180" height="120" rx="15" fill="url(#lake-storage)" stroke="#2C5F82" stroke-width="3"/>
+                        <circle cx="590" cy="140" r="15" fill="#8BC34A"/>
+                        <rect x="610" y="125" width="30" height="30" fill="#607D8B"/>
+                        <circle cx="660" cy="140" r="12" fill="#4A90E2"/>
+                        <text x="640" y="180" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Data Lake</text>
+                        
+                        <!-- Data Sources with Icons -->
+                        <g id="data-ingestion">
+                            <rect x="50" y="60" width="200" height="30" rx="5" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+                            <circle cx="70" cy="75" r="8" fill="#4CAF50"/>
+                            <text x="90" y="80" font-size="12" font-weight="bold" fill="#2E7D32">Data Ingestion</text>
+                            <line x1="250" y1="75" x2="480" y2="130" stroke="#4CAF50" stroke-width="3"/>
+                        </g>
+                        
+                        <g id="big-data">
+                            <rect x="50" y="100" width="200" height="30" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="2"/>
+                            <rect x="70" y="110" width="8" height="10" fill="#FF9800"/>
+                            <text x="90" y="120" font-size="12" font-weight="bold" fill="#E65100">Big Data Processing</text>
+                            <line x1="250" y1="115" x2="480" y2="140" stroke="#FF9800" stroke-width="3"/>
+                        </g>
+                        
+                        <g id="analytics-ml">
+                            <rect x="50" y="140" width="250" height="30" rx="5" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+                            <circle cx="70" cy="155" r="6" fill="#2196F3"/>
+                            <path d="M 75 150 Q 80 155 75 160" stroke="#2196F3" stroke-width="2" fill="none"/>
+                            <text x="90" y="160" font-size="12" font-weight="bold" fill="#0D47A1">Analytics & Machine Learning</text>
+                            <line x1="300" y1="155" x2="480" y2="150" stroke="#2196F3" stroke-width="3"/>
+                        </g>
+                        
+                        <g id="business-intelligence">
+                            <rect x="50" y="180" width="230" height="30" rx="5" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2"/>
+                            <rect x="70" y="188" width="12" height="8" fill="#9C27B0"/>
+                            <rect x="70" y="198" width="8" height="4" fill="#9C27B0"/>
+                            <text x="90" y="200" font-size="12" font-weight="bold" fill="#6A1B9A">Business Intelligence & Reporting</text>
+                            <line x1="280" y1="195" x2="480" y2="165" stroke="#9C27B0" stroke-width="3"/>
+                        </g>
+                        
+                        <g id="data-archiving">
+                            <rect x="50" y="220" width="200" height="30" rx="5" fill="#EFEBE9" stroke="#795548" stroke-width="2"/>
+                            <rect x="70" y="230" width="10" height="6" fill="#795548"/>
+                            <rect x="70" y="237" width="10" height="6" fill="#795548"/>
+                            <text x="90" y="240" font-size="12" font-weight="bold" fill="#5D4037">Data Archiving</text>
+                            <line x1="250" y1="235" x2="480" y2="180" stroke="#795548" stroke-width="3"/>
+                        </g>
+                        
+                        <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Data Lake: Central Repository for All Data Types</text>
+                    </svg>
+                    <div class="caption">Data Lake serves as central storage for diverse data sources and use cases</div>
                 </div>
 
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Architecture Aspect</th>
+                            <th>Area</th>
                             <th>Data Lake</th>
                             <th>Data Warehouse</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Data Storage Approach</strong></td>
-                            <td>Schema-on-read: Store raw data in native formats, define structure during analysis</td>
-                            <td>Schema-on-write: Define structured schemas before data ingestion and storage</td>
+                            <td><strong>Data Types</strong></td>
+                            <td>Structured, Semi-structured, and Unstructured data</td>
+                            <td>Only structured data with predefined schemas</td>
                         </tr>
                         <tr>
-                            <td><strong>Data Format Support</strong></td>
-                            <td>Comprehensive: Structured, semi-structured, unstructured data (JSON, Parquet, images, videos)</td>
-                            <td>Primarily structured: Relational tables with defined schemas and data types</td>
+                            <td><strong>Schema Approach</strong></td>
+                            <td>Schema-on-Read: Define structure when accessing data</td>
+                            <td>Schema-on-Write: Define structure before storing data</td>
                         </tr>
                         <tr>
-                            <td><strong>Cost Structure</strong></td>
-                            <td>Lower storage costs, pay-as-you-go compute model, efficient resource utilization</td>
-                            <td>Higher infrastructure costs, dedicated compute resources, optimized for performance</td>
+                            <td><strong>Storage Cost</strong></td>
+                            <td>Low cost, commodity storage, pay-as-you-go</td>
+                            <td>Higher cost, specialized storage infrastructure</td>
                         </tr>
                         <tr>
-                            <td><strong>Query Performance</strong></td>
-                            <td>Variable performance: Fast for well-partitioned data, slower for ad-hoc queries</td>
-                            <td>Consistently high performance: Optimized indexing, pre-computed aggregations</td>
+                            <td><strong>Processing Speed</strong></td>
+                            <td>Variable - depends on query optimization and data organization</td>
+                            <td>Fast - optimized for analytical queries with pre-processing</td>
                         </tr>
                         <tr>
-                            <td><strong>Data Governance</strong></td>
-                            <td>Flexible governance: Emerging standards, schema evolution, metadata management</td>
-                            <td>Mature governance: Established security models, data lineage, quality controls</td>
+                            <td><strong>Data Quality</strong></td>
+                            <td>Raw data quality - may require cleaning and validation</td>
+                            <td>High quality - data is cleaned and validated before storage</td>
                         </tr>
                         <tr>
-                            <td><strong>Use Case Optimization</strong></td>
-                            <td>Data exploration, machine learning, IoT analytics, real-time streaming</td>
-                            <td>Business reporting, dashboard creation, regulatory compliance, operational analytics</td>
+                            <td><strong>Flexibility</strong></td>
+                            <td>High agility - can store any data format and evolve schema</td>
+                            <td>Lower flexibility - requires predefined structure and planning</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Data Lake Strategic Advantages</h3>
-                <ul>
-                    <li><strong>Infinite Scalability:</strong> Handle exponentially growing data volumes without architectural constraints</li>
-                    <li><strong>Format Agnosticism:</strong> Accommodate diverse data types including streaming logs, sensor data, and multimedia content</li>
-                    <li><strong>Economic Efficiency:</strong> Leverage commodity storage and cloud-native pricing models for cost optimization</li>
-                    <li><strong>Innovation Enablement:</strong> Support experimental analytics, machine learning model development, and emerging use cases</li>
-                    <li><strong>Real-time Integration:</strong> Process streaming data alongside historical datasets for comprehensive analysis</li>
-                    <li><strong>Future-Proofing:</strong> Maintain raw data for re-processing as business requirements and technologies evolve</li>
-                </ul>
+                <div class="info-box">
+                    <p><strong>Curious Question: Should we discard data warehouse then?</strong></p>
+                    <p><strong>No! We will see why and how to use combination of Data Lake and Data Warehouse. This new approach is called Lakehouse.</strong></p>
+                </div>
 
-                <h3>Lake House Architecture Implementation</h3>
+                <h3>Lakehouse Architecture</h3>
                 <div class="architecture-diagram">
-                    <svg class="architecture-svg" viewBox="0 0 800 400">
+                    <svg class="architecture-svg" viewBox="0 0 800 350">
                         <defs>
                             <linearGradient id="logical-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
@@ -927,22 +1170,19 @@
                         </defs>
                         
                         <!-- Logical Layer -->
-                        <rect x="100" y="50" width="600" height="80" rx="10" fill="url(#logical-grad)" />
-                        <text x="400" y="80" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Logical Abstraction Layer</text>
-                        <text x="400" y="105" text-anchor="middle" fill="white" font-size="12">Business Intelligence • Data Science • Machine Learning • Analytics</text>
+                        <rect x="100" y="50" width="600" height="70" rx="10" fill="url(#logical-grad)" />
+                        <text x="400" y="80" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Logical Layer / Abstraction Layer</text>
+                        <text x="400" y="105" text-anchor="middle" fill="white" font-size="12">BI Reports, Data Science, Machine Learning</text>
                         
                         <!-- Governance Layer -->
-                        <rect x="100" y="160" width="600" height="80" rx="10" fill="url(#governance-grad)" />
-                        <text x="400" y="190" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Data Governance & Metadata Layer</text>
-                        <text x="400" y="215" text-anchor="middle" fill="white" font-size="12">Schema Management • Data Catalog • Lineage Tracking • Security Controls</text>
+                        <rect x="100" y="150" width="600" height="70" rx="10" fill="url(#governance-grad)" />
+                        <text x="400" y="180" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Governance Layer</text>
+                        <text x="400" y="205" text-anchor="middle" fill="white" font-size="12">Metadata & Format where we hold the schema of the data</text>
                         
                         <!-- Data Lake -->
-                        <rect x="100" y="270" width="600" height="100" rx="10" fill="url(#lake-grad)" />
-                        <text x="400" y="305" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Unified Data Lake Storage</text>
-                        <text x="250" y="330" text-anchor="middle" fill="white" font-size="11">Structured Data</text>
-                        <text x="400" y="330" text-anchor="middle" fill="white" font-size="11">Semi-structured Data</text>
-                        <text x="550" y="330" text-anchor="middle" fill="white" font-size="11">Unstructured Data</text>
-                        <text x="400" y="350" text-anchor="middle" fill="white" font-size="10">Optimized Storage • ACID Transactions • Schema Evolution</text>
+                        <rect x="100" y="250" width="600" height="70" rx="10" fill="url(#lake-grad)" />
+                        <text x="400" y="280" text-anchor="middle" fill="white" font-weight="bold" font-size="16">Data Lake</text>
+                        <text x="400" y="305" text-anchor="middle" fill="white" font-size="12">Structured, Semi-structured & Unstructured Data</text>
                         
                         <!-- Arrows -->
                         <defs>
@@ -952,22 +1192,13 @@
                             </marker>
                         </defs>
                         
-                        <line x1="400" y1="135" x2="400" y2="155" stroke="#666" stroke-width="2" marker-end="url(#lake-arrow)" />
-                        <line x1="400" y1="245" x2="400" y2="265" stroke="#666" stroke-width="2" marker-end="url(#lake-arrow)" />
+                        <line x1="400" y1="125" x2="400" y2="145" stroke="#666" stroke-width="2" marker-end="url(#lake-arrow)" />
+                        <line x1="400" y1="225" x2="400" y2="245" stroke="#666" stroke-width="2" marker-end="url(#lake-arrow)" />
                         
-                        <text x="400" y="20" text-anchor="middle" font-weight="bold" font-size="18" fill="#333">Modern Lake House Architecture</text>
+                        <text x="400" y="20" text-anchor="middle" font-weight="bold" font-size="18" fill="#333">Lakehouse Architecture</text>
                     </svg>
-                    <div class="caption">Lake House architecture combining data lake storage flexibility with data warehouse query performance</div>
+                    <div class="caption">Lakehouse: Three-layer architecture combining data lake storage with warehouse capabilities</div>
                 </div>
-
-                <h4>Lake House Benefits</h4>
-                <ul>
-                    <li><strong>Unified Data Platform:</strong> Single repository eliminating data silos and reducing integration complexity</li>
-                    <li><strong>Cost Optimization:</strong> Leverage cloud-native storage pricing while maintaining query performance</li>
-                    <li><strong>Schema Flexibility:</strong> Support schema evolution and diverse data formats within unified architecture</li>
-                    <li><strong>Performance Scaling:</strong> Combine storage scalability with compute optimization for analytical workloads</li>
-                    <li><strong>Governance Integration:</strong> Implement comprehensive data governance across all data types and formats</li>
-                </ul>
             </section>
 
             <!-- Medallion Architecture -->
@@ -975,10 +1206,10 @@
                 <h2>Medallion Architecture</h2>
                 
                 <div class="info-box">
-                    <p><strong>Implementation Note:</strong> Medallion architecture has become a cornerstone pattern in modern cloud data engineering implementations. Major cloud providers including Azure, AWS, and Databricks have standardized on this approach for organizing data processing workflows in production environments.</p>
+                    <p><strong>Note:</strong> We do apply medallion architecture in our cloud data engineering architecture. This pattern is widely adopted by organizations using modern data platforms like Databricks, Azure, and AWS.</p>
                 </div>
 
-                <p>Medallion architecture represents a systematic data design pattern that organizes information processing into three progressive refinement layers within lakehouse environments. This approach ensures incremental quality improvement as data flows through bronze, silver, and gold tiers, commonly referred to as "multi-hop" architecture due to its sequential processing nature.</p>
+                <p>A medallion architecture is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture. It is also referred to as "multi-hop" architecture.</p>
 
                 <div class="medallion-diagram">
                     <div class="medallion-layer bronze">
@@ -1000,191 +1231,286 @@
                     </div>
                 </div>
 
-                <h3>Bronze Layer: Raw Data Foundation</h3>
+                <h3>Bronze Layer (Raw Data)</h3>
                 <div class="tech-card" style="border-left: 5px solid #cd7f32;">
-                    <h4>Unprocessed Data Ingestion</h4>
+                    <h4>Raw Data Integration</h4>
                     <ul>
-                        <li><strong>Data Preservation:</strong> Maintain exact copies of source data without modification, ensuring complete data lineage and enabling reprocessing capabilities</li>
-                        <li><strong>Format Diversity:</strong> Support multiple data formats including JSON, CSV, Parquet, Avro, and proprietary formats from various source systems</li>
-                        <li><strong>Metadata Enhancement:</strong> Append system metadata including ingestion timestamps, source identifiers, and processing batch information</li>
-                        <li><strong>Schema Independence:</strong> Store data without predefined schemas, allowing source system evolution without immediate downstream impact</li>
-                        <li><strong>Change Data Capture:</strong> Implement efficient mechanisms for capturing incremental changes from source systems</li>
-                        <li><strong>Audit Foundation:</strong> Provide immutable historical record for compliance, debugging, and data quality investigation</li>
+                        <li>Landing zone for raw data from external source systems</li>
+                        <li>No data cleanup or validation performed</li>
+                        <li>Table structures mirror source systems "as-is"</li>
+                        <li>Additional metadata columns: load date/time, process ID</li>
+                        <li>Focus on Change Data Capture and historical archive</li>
+                        <li>Data stored in native format (JSON, CSV, etc.)</li>
                     </ul>
                 </div>
 
-                <h3>Silver Layer: Processed Data Integration</h3>
+                <h3>Silver Layer (Cleaned and Transformed)</h3>
                 <div class="tech-card" style="border-left: 5px solid #c0c0c0;">
-                    <h4>Cleansed and Conformed Data</h4>
+                    <h4>Filtered, Cleaned, Augmented</h4>
                     <ul>
-                        <li><strong>Data Quality Implementation:</strong> Apply comprehensive cleansing rules including null value handling, duplicate removal, and data validation</li>
-                        <li><strong>Enterprise Integration:</strong> Merge data from multiple source systems to create unified business entity representations</li>
-                        <li><strong>Schema Standardization:</strong> Implement consistent data types, naming conventions, and structural patterns across datasets</li>
-                        <li><strong>Business Rule Application:</strong> Apply organizational business logic while maintaining flexibility for evolving requirements</li>
-                        <li><strong>Self-Service Enablement:</strong> Provide clean, reliable datasets for data scientists, analysts, and business users</li>
-                        <li><strong>ELT Optimization:</strong> Implement "just-enough" transformation philosophy, prioritizing speed and agility over complex processing</li>
-                        <li><strong>Dimensional Foundation:</strong> Structure data using normalized patterns similar to Third Normal Form for efficient storage and processing</li>
+                        <li>Data cleaning and validation performed</li>
+                        <li>Matched, merged, conformed, and cleansed data</li>
+                        <li>Enterprise view of key business entities and transactions</li>
+                        <li>Enables self-service analytics and ad-hoc reporting</li>
+                        <li>Source for data scientists and analysts</li>
+                        <li>ELT methodology with "just-enough" transformations</li>
                     </ul>
                 </div>
 
-                <h3>Gold Layer: Business-Ready Analytics</h3>
+                <h3>Gold Layer (Business-Level Aggregates)</h3>
                 <div class="tech-card" style="border-left: 5px solid #ffd700;">
-                    <h4>Consumption-Optimized Data Products</h4>
+                    <h4>Business Intelligence Ready</h4>
                     <ul>
-                        <li><strong>Subject Area Organization:</strong> Structure data into business-specific databases aligned with departmental and functional requirements</li>
-                        <li><strong>Performance Optimization:</strong> Implement denormalized data models with pre-calculated aggregations and optimized join paths</li>
-                        <li><strong>Business Intelligence Integration:</strong> Provide direct connectivity to reporting tools, dashboard platforms, and analytical applications</li>
-                        <li><strong>Dimensional Modeling:</strong> Implement star and snowflake schemas following Kimball methodology for optimal analytical performance</li>
-                        <li><strong>Metric Standardization:</strong> Establish single source of truth for key performance indicators and business metrics</li>
-                        <li><strong>User Experience Focus:</strong> Design data structures that align with business user mental models and analytical workflows</li>
-                        <li><strong>Strategic Analytics:</strong> Support advanced use cases including customer analytics, product analysis, financial reporting, and operational intelligence</li>
+                        <li>Consumption-ready, project-specific databases</li>
+                        <li>Denormalized, read-optimized data models</li>
+                        <li>Final data transformations and quality rules applied</li>
+                        <li>Subject areas: Customer Analytics, Product Quality, Inventory</li>
+                        <li>Optimized for reporting and business intelligence</li>
                     </ul>
                 </div>
-
-                <h3>Medallion Architecture Benefits</h3>
-                <ul>
-                    <li><strong>Architectural Simplicity:</strong> Three-layer design that's intuitive for both technical teams and business stakeholders</li>
-                    <li><strong>Incremental Processing:</strong> Enable efficient data processing with minimal resource consumption through change data capture</li>
-                    <li><strong>Data Recovery Capabilities:</strong> Reconstruct any layer from raw data, providing robust disaster recovery options</li>
-                    <li><strong>ACID Transaction Support:</strong> Maintain data consistency and integrity across all processing layers</li>
-                    <li><strong>Time Travel Functionality:</strong> Access historical versions of data for auditing and analysis purposes</li>
-                    <li><strong>Clear Data Lineage:</strong> Track data transformation and movement across architectural layers</li>
-                    <li><strong>Scalable Design:</strong> Support growing data volumes and increasing analytical complexity</li>
-                </ul>
             </section>
 
-            <!-- File Formats -->
+            <!-- File Formats & Big Data -->
             <section id="file-formats" class="section">
                 <h2>File Formats & Big Data Technologies</h2>
 
-                <h3>Storage Format Optimization</h3>
-                <p>The choice between row-based and column-based storage formats significantly impacts query performance, storage efficiency, and processing capabilities in modern data architectures.</p>
-
+                <h3>Row-based vs Column-based Formats</h3>
+                <p>The fundamental difference in how data is organized and stored significantly impacts query performance, storage efficiency, and system optimization:</p>
+                
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Storage Type</th>
-                            <th>OLTP (Row-Oriented)</th>
-                            <th>OLAP (Column-Oriented)</th>
+                            <th>Aspect</th>
+                            <th>OLTP (Row-based Storage)</th>
+                            <th>OLAP (Column-based Storage)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>File Formats</strong></td>
-                            <td>CSV, AVRO, JSON - optimized for transactional updates and record-level operations</td>
-                            <td>Parquet, ORC, Delta Lake - optimized for analytical queries and aggregations</td>
+                            <td>CSV, AVRO, JSON - optimized for transactional updates</td>
+                            <td>Parquet, ORC, Columnar - optimized for analytical reads because column-based storage is good for read operations</td>
                         </tr>
                         <tr>
-                            <td><strong>Primary Use Cases</strong></td>
-                            <td>Transaction processing, real-time updates, operational systems</td>
-                            <td>Analytics, reporting, data warehousing, business intelligence</td>
+                            <td><strong>Data Organization</strong></td>
+                            <td>Data written row by row: [ID=1, Name="John", Age=25, Salary=50000] then [ID=2, Name="Jane", Age=30, Salary=60000]</td>
+                            <td>Data written column by column: [ID: 1,2,3...] [Name: "John","Jane","Bob"...] [Age: 25,30,28...] [Salary: 50000,60000,55000...]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage Pattern</strong></td>
+                            <td>All attributes of one record stored together physically on disk</td>
+                            <td>Same attributes from all records stored together physically on disk</td>
                         </tr>
                         <tr>
                             <td><strong>Query Performance</strong></td>
-                            <td>Excellent for single-record lookups and small-scale updates</td>
-                            <td>Superior for aggregations, filtering, and large-scale analytical operations</td>
+                            <td>Excellent for single record retrieval because all data for one row is stored together</td>
+                            <td>Superior for aggregations because you only read needed columns, not entire rows</td>
                         </tr>
                         <tr>
                             <td><strong>Compression Efficiency</strong></td>
-                            <td>Limited compression due to mixed data types within rows</td>
-                            <td>High compression ratios through column-level encoding and compression</td>
+                            <td>Limited compression because mixed data types within rows</td>
+                            <td>High compression ratios because similar data types in columns compress better</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Write Operations</strong></td>
+                            <td>Fast INSERT/UPDATE because entire row written at once</td>
+                            <td>Slower INSERT/UPDATE because data scattered across multiple column files</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Read Operations</strong></td>
+                            <td>Read entire row even if you only need few columns</td>
+                            <td>Read only required columns, reducing I/O significantly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Use Case Optimization</strong></td>
+                            <td>Transaction processing, real-time updates, operational systems</td>
+                            <td>Analytics, reporting, data warehousing, business intelligence because column-based is good for OLAP</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Delta Lake: Advanced Table Format</h3>
-                <div class="highlight-box">
-                    <h4>Next-Generation Data Storage</h4>
-                    <p><strong>Delta Lake Innovation:</strong> Built on Parquet foundation, Delta Lake provides enterprise-grade features including ACID transactions, time travel capabilities, and schema evolution. This combination enables both streaming and batch processing workflows on the same datasets while maintaining data consistency.</p>
+                <h3>Delta Format</h3>
+                
+                <h4>Why do we need Delta format when we already have Parquet file?</h4>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin: 3rem 0;">
+                    <div style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); color: white; padding: 2rem; border-radius: 15px; flex: 1; max-width: 250px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Parquet Files</h3>
+                        <p style="margin: 0; font-size: 1.1rem;">Data Storage</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Columnar format for efficient analytics</p>
+                    </div>
+                    
+                    <div style="font-size: 3rem; color: #2a5298; font-weight: bold;">+</div>
+                    
+                    <div style="background: linear-gradient(135deg, #FF6B35 0%, #D84315 100%); color: white; padding: 2rem; border-radius: 15px; flex: 1; max-width: 250px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Transaction Log</h3>
+                        <p style="margin: 0; font-size: 1.1rem;">Metadata & History</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Track all changes and versions</p>
+                    </div>
+                    
+                    <div style="font-size: 3rem; color: #2a5298; font-weight: bold;">=</div>
+                    
+                    <div style="background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); color: white; padding: 2rem; border-radius: 15px; flex: 1; max-width: 250px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <h3 style="color: white; margin: 0 0 1rem 0; font-size: 1.5rem;">Delta File</h3>
+                        <p style="margin: 0; font-size: 1.1rem;">Complete Solution</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Best of both worlds</p>
+                    </div>
                 </div>
 
-                <h4>Delta Lake Capabilities</h4>
+                <div class="info-box">
+                    <h4>Understanding Delta File Concept</h4>
+                    <p>In Delta file, we have a transaction log that enables powerful capabilities:</p>
+                    <ul>
+                        <li><strong>Versioning:</strong> Because we can do versioning, I can travel back to my previous version if needed</li>
+                        <li><strong>Schema Evolution:</strong> It allows me to change/evolve the schema easily without breaking existing queries</li>
+                        <li><strong>ACID Transactions:</strong> Ensures data consistency and reliability for all operations</li>
+                        <li><strong>Time Travel:</strong> Access any historical state of data for debugging and analysis</li>
+                    </ul>
+                </div>
+
+                <h4>Benefits of Delta File</h4>
                 <ul>
-                    <li><strong>ACID Transaction Support:</strong> Ensure data consistency across concurrent read and write operations</li>
-                    <li><strong>Time Travel Queries:</strong> Access historical data versions for auditing, debugging, and analysis</li>
-                    <li><strong>Schema Evolution:</strong> Handle column additions, deletions, and type changes gracefully</li>
-                    <li><strong>Unified Batch and Streaming:</strong> Process real-time streams alongside historical data in single tables</li>
-                    <li><strong>Performance Optimization:</strong> Automatic file compaction, data skipping, and Z-ordering for query acceleration</li>
-                    <li><strong>Data Quality Controls:</strong> Built-in data validation and constraint enforcement capabilities</li>
+                    <li><strong>Transaction Log Benefits:</strong> The entire metadata is stored in transaction log, providing a single source of truth for all data operations and enabling complete audit trails</li>
+                    <li><strong>Schema Flexibility:</strong> It allows me to change/evolve the schema easily. Add, remove, or modify columns without rewriting entire datasets</li>
+                    <li><strong>ACID Compliance:</strong> It is handy in terms of ACID - ensuring atomicity, consistency, isolation, and durability for all data operations</li>
+                    <li><strong>Performance Optimization:</strong> It is very efficient and has everything from traditional databases. Query is also fast because of Parquet file, the only addition is transaction log</li>
+                    <li><strong>Data Reliability:</strong> Automatic handling of failures, concurrent writes, and data validation</li>
                 </ul>
 
-                <h3>Big Data Technology Ecosystem</h3>
-                <div class="tech-stack">
-                    <div class="tech-card">
-                        <h4>Apache Kafka</h4>
-                        <p><strong>Distributed Streaming Platform:</strong> Handles high-throughput, fault-tolerant event streaming for real-time data pipelines. Processes millions of messages per second with horizontal scalability and durability guarantees.</p>
+                <p>Delta format combines the best of both worlds: the performance of Parquet files for analytics with the reliability and features of traditional databases through its transaction log.</p>
+
+                <h3>Big Data Framework Ecosystem</h3>
+                <p>We have different frameworks based on the type of data we work with:</p>
+
+                <!-- Horizontal layout for Big Data frameworks -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0;">
+                    <div class="tech-card" style="width: 100%; border-left: 5px solid #FF6B35;">
+                        <h4>1. Apache Kafka</h4>
+                        <p><strong>Distributed Event Streaming Platform:</strong> Apache Kafka is a distributed event store and stream-processing platform designed to provide a unified, high-throughput, low-latency platform for handling real-time data feeds. Work with streaming data and real-time big data processing for building real-time data pipelines and streaming applications.</p>
                     </div>
-                    <div class="tech-card">
-                        <h4>Apache Airflow</h4>
-                        <p><strong>Workflow Orchestration:</strong> Manages complex data pipeline dependencies with sophisticated scheduling, monitoring, and error handling. Enables programmatic workflow definition using Python-based DAGs (Directed Acyclic Graphs).</p>
+                    
+                    <div class="tech-card" style="width: 100%; border-left: 5px solid #4CAF50;">
+                        <h4>2. Apache Airflow</h4>
+                        <p><strong>Workflow Orchestration Platform:</strong> Apache Airflow is an open-source workflow management platform for data engineering pipelines that allows programmatic authoring and scheduling of workflows. Used for orchestration when we need to build so many pipelines with complex logic that needs to be run in specific order.</p>
                     </div>
-                    <div class="tech-card">
-                        <h4>Apache Hive</h4>
-                        <p><strong>Data Warehouse Software:</strong> Provides SQL-like querying capabilities over large distributed datasets. Enables data summarization, querying, and analysis using HiveQL for Hadoop ecosystem integration.</p>
+                    
+                    <div class="tech-card" style="width: 100%; border-left: 5px solid #2196F3;">
+                        <h4>3. Apache Hive</h4>
+                        <p><strong>Data Warehouse System:</strong> Apache Hive is a distributed, fault-tolerant data warehouse system that enables analytics at a massive scale and facilitates reading, writing, and managing petabytes of data using SQL. Create external tables and provides SQL-like interface to query large datasets stored in distributed systems.</p>
                     </div>
-                    <div class="tech-card">
-                        <h4>Apache Spark</h4>
-                        <p><strong>Unified Analytics Engine:</strong> Delivers fast, distributed processing for batch and streaming workloads. Includes native support for SQL, machine learning, graph processing, and streaming analytics.</p>
+                    
+                    <div class="tech-card" style="width: 100%; border-left: 5px solid #9C27B0;">
+                        <h4>4. Apache Spark</h4>
+                        <p><strong>Unified Analytics Engine:</strong> Apache Spark is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters. Hero product and powerful distributed computing framework used extensively in Databricks for data processing and analytics.</p>
                     </div>
                 </div>
 
-                <h3>Apache Spark Distributed Architecture</h3>
+                <h3>Let's see how distributed computing with Spark works?</h3>
+                <p>We ask multiple machines to work together for complete computation. It becomes a cluster with improved efficiency and speed.</p>
+
                 <div class="architecture-diagram">
-                    <svg class="architecture-svg" viewBox="0 0 800 300">
+                    <svg class="architecture-svg" viewBox="0 0 900 450">
                         <defs>
-                            <linearGradient id="driver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FF5722;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#D84315;stop-opacity:1" />
+                            <linearGradient id="master-node" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B8E6B8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#A0D468;stop-opacity:1" />
                             </linearGradient>
-                            <linearGradient id="worker-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#607D8B;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#455A64;stop-opacity:1" />
+                            <linearGradient id="worker-node" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#B8E6B8;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#A0D468;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="cluster-manager" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
                             </linearGradient>
                         </defs>
                         
-                        <!-- Driver Node -->
-                        <rect x="50" y="100" width="150" height="100" rx="10" fill="url(#driver-grad)" />
-                        <text x="125" y="130" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Driver Node</text>
-                        <text x="125" y="150" text-anchor="middle" fill="white" font-size="11">• SparkContext</text>
-                        <text x="125" y="165" text-anchor="middle" fill="white" font-size="11">• Task Scheduling</text>
-                        <text x="125" y="180" text-anchor="middle" fill="white" font-size="11">• Resource Management</text>
+                        <!-- Master Node -->
+                        <rect x="50" y="80" width="250" height="200" rx="20" fill="url(#master-node)" stroke="#333" stroke-width="2"/>
+                        <text x="175" y="110" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Master Node</text>
+                        
+                        <!-- Driver Program inside Master Node -->
+                        <rect x="80" y="140" width="190" height="120" rx="10" fill="white" stroke="#333" stroke-width="2"/>
+                        <text x="175" y="165" text-anchor="middle" font-weight="bold" font-size="16" fill="#2c3e50">Driver Program</text>
+                        
+                        <!-- Spark Context inside Driver Program -->
+                        <rect x="110" y="190" width="130" height="50" rx="5" fill="#4A5568" />
+                        <text x="175" y="210" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Spark</text>
+                        <text x="175" y="225" text-anchor="middle" font-weight="bold" font-size="14" fill="white">Context</text>
                         
                         <!-- Worker Nodes -->
-                        <rect x="300" y="50" width="120" height="80" rx="8" fill="url(#worker-grad)" />
-                        <text x="360" y="80" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Worker Node 1</text>
-                        <text x="360" y="95" text-anchor="middle" fill="white" font-size="10">Executors</text>
-                        <text x="360" y="110" text-anchor="middle" fill="white" font-size="10">Task Processing</text>
+                        <!-- Top Worker Node -->
+                        <rect x="600" y="50" width="250" height="120" rx="20" fill="url(#worker-node)" stroke="#333" stroke-width="2"/>
+                        <text x="725" y="80" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Worker Node</text>
                         
-                        <rect x="300" y="150" width="120" height="80" rx="8" fill="url(#worker-grad)" />
-                        <text x="360" y="180" text-anchor="middle" fill="white" font-weight="bold" font-size="12">Worker Node 2</text>
-                        <text x="360" y="195" text-anchor="middle" fill="white" font-size="10">Executors</text>
-                        <text x="360" y="210" text-anchor="middle" fill="white" font-size="10">Task Processing</text>
+                        <!-- Task and Cache in Top Worker -->
+                        <rect x="630" y="100" width="80" height="50" rx="5" fill="#319795" />
+                        <text x="670" y="120" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Task</text>
+                        <text x="670" y="135" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Executor</text>
+                        
+                        <rect x="740" y="100" width="80" height="50" rx="5" fill="#A0AEC0" />
+                        <text x="780" y="120" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Cache</text>
+                        <text x="780" y="135" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Storage</text>
+                        
+                        <!-- Bottom Worker Node -->
+                        <rect x="600" y="280" width="250" height="120" rx="20" fill="url(#worker-node)" stroke="#333" stroke-width="2"/>
+                        <text x="725" y="310" text-anchor="middle" font-weight="bold" font-size="18" fill="#2c3e50">Worker Node</text>
+                        
+                        <!-- Task and Cache in Bottom Worker -->
+                        <rect x="630" y="330" width="80" height="50" rx="5" fill="#319795" />
+                        <text x="670" y="350" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Task</text>
+                        <text x="670" y="365" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Executor</text>
+                        
+                        <rect x="740" y="330" width="80" height="50" rx="5" fill="#A0AEC0" />
+                        <text x="780" y="350" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Cache</text>
+                        <text x="780" y="365" text-anchor="middle" font-weight="bold" font-size="12" fill="white">Storage</text>
                         
                         <!-- Cluster Manager -->
-                        <rect x="500" y="100" width="150" height="100" rx="10" fill="#4CAF50" />
-                        <text x="575" y="130" text-anchor="middle" fill="white" font-weight="bold" font-size="14">Cluster Manager</text>
-                        <text x="575" y="150" text-anchor="middle" fill="white" font-size="11">• Resource Allocation</text>
-                        <text x="575" y="165" text-anchor="middle" fill="white" font-size="11">• Node Management</text>
-                        <text x="575" y="180" text-anchor="middle" fill="white" font-size="11">• Fault Tolerance</text>
+                        <rect x="350" y="150" width="200" height="120" rx="20" fill="url(#cluster-manager)" stroke="#333" stroke-width="2"/>
+                        <text x="450" y="185" text-anchor="middle" font-weight="bold" font-size="16" fill="white">Cluster</text>
+                        <text x="450" y="205" text-anchor="middle" font-weight="bold" font-size="16" fill="white">Manager</text>
+                        <text x="450" y="235" text-anchor="middle" font-size="12" fill="white">Resource</text>
+                        <text x="450" y="250" text-anchor="middle" font-size="12" fill="white">Management</text>
                         
                         <!-- Connection Lines -->
-                        <line x1="200" y1="130" x2="295" y2="90" stroke="#666" stroke-width="2"/>
-                        <line x1="200" y1="170" x2="295" y2="190" stroke="#666" stroke-width="2"/>
-                        <line x1="425" y1="90" x2="495" y2="130" stroke="#666" stroke-width="2"/>
-                        <line x1="425" y1="190" x2="495" y2="170" stroke="#666" stroke-width="2"/>
+                        <defs>
+                            <marker id="spark-arrow" markerWidth="10" markerHeight="7" 
+                             refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                            </marker>
+                        </defs>
                         
-                        <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="16" fill="#333">Apache Spark Cluster Architecture</text>
+                        <!-- Master to Cluster Manager -->
+                        <line x1="305" y1="180" x2="345" y2="200" stroke="#333" stroke-width="3" marker-end="url(#spark-arrow)" />
+                        
+                        <!-- Cluster Manager to Worker Nodes -->
+                        <line x1="555" y1="180" x2="595" y2="120" stroke="#333" stroke-width="3" marker-end="url(#spark-arrow)" />
+                        <line x1="555" y1="220" x2="595" y2="350" stroke="#333" stroke-width="3" marker-end="url(#spark-arrow)" />
                     </svg>
-                    <div class="caption">Distributed processing architecture with driver coordination and worker execution</div>
+                    <div class="caption">Apache Spark Cluster Architecture: Master Node coordinates with Cluster Manager to distribute tasks to Worker Nodes</div>
                 </div>
 
-                <h4>Spark Architecture Benefits</h4>
+                <h4>How Spark Architecture Works</h4>
+                <p>This is Spark Architecture. The human will tell the Driver node (inside Master Node). Now, the driver node will orchestrate and tell the worker node to do certain task, similarly the other worker nodes will be notified of their task. This is called the cluster of machines where bunch of machines will together work to do certain task and brain is driver node which is responsible for orchestrating the work. This is called Spark architecture.</p>
+
+                <h4>Detailed Spark Architecture Components</h4>
                 <ul>
-                    <li><strong>Horizontal Scalability:</strong> Add worker nodes dynamically to handle increasing data volumes</li>
-                    <li><strong>Fault Tolerance:</strong> Automatic task recovery and data replication across cluster nodes</li>
-                    <li><strong>Memory Optimization:</strong> In-memory computing reduces disk I/O for iterative algorithms</li>
-                    <li><strong>Unified Platform:</strong> Single framework supporting batch processing, streaming, ML, and graph analytics</li>
-                    <li><strong>Language Support:</strong> Native APIs for Scala, Java, Python, and R programming languages</li>
+                    <li><strong>Master Node:</strong> Contains the Driver Program that manages the overall Spark application and coordinates all operations</li>
+                    <li><strong>Driver Program:</strong> The main program that creates SparkContext and defines transformations and actions on RDDs</li>
+                    <li><strong>Spark Context:</strong> The entry point for all Spark functionality, coordinates with cluster manager to acquire resources</li>
+                    <li><strong>Cluster Manager:</strong> External service responsible for acquiring resources and managing the cluster (can be Spark's own, YARN, Mesos, or Kubernetes)</li>
+                    <li><strong>Worker Nodes:</strong> Machines in the cluster that execute the actual data processing tasks</li>
+                    <li><strong>Task Executors:</strong> Processes on worker nodes that run individual tasks and cache data</li>
+                    <li><strong>Cache Storage:</strong> In-memory storage on each worker node for fast data access and reuse</li>
+                </ul>
+
+                <h4>Benefits of Spark Distributed Architecture</h4>
+                <ul>
+                    <li><strong>Fault Tolerance:</strong> If one worker node fails, tasks are automatically reassigned to other nodes</li>
+                    <li><strong>Horizontal Scalability:</strong> Add more worker nodes to handle larger datasets and increase processing power</li>
+                    <li><strong>In-Memory Processing:</strong> Cache frequently used data in memory across the cluster for faster processing</li>
+                    <li><strong>Resource Optimization:</strong> Cluster manager efficiently allocates resources based on workload requirements</li>
+                    <li><strong>Parallel Processing:</strong> Multiple tasks execute simultaneously across different nodes for improved performance</li>
                 </ul>
             </section>
 
@@ -1192,255 +1518,279 @@
             <section id="cloud-engineering" class="section">
                 <h2>Cloud Data Engineering</h2>
 
+                <h3>On-Premise vs Cloud Infrastructure</h3>
+                <p>Organizations must choose between managing their own data infrastructure or leveraging cloud services. Each approach has distinct advantages and use cases.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>On-Premise</th>
+                            <th>Cloud</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Infrastructure Ownership</strong></td>
+                            <td>Organization owns and maintains physical hardware, servers, networking equipment</td>
+                            <td>Cloud provider owns and maintains all physical infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Capital Investment</strong></td>
+                            <td>High upfront costs for hardware, software licenses, and data center setup</td>
+                            <td>Pay-as-you-go model with no upfront infrastructure investment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability</strong></td>
+                            <td>Limited by physical hardware capacity, requires planning for peak loads</td>
+                            <td>Virtually unlimited scalability, can scale up or down based on demand</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Control & Security</strong></td>
+                            <td>Complete control over security policies, data location, and compliance</td>
+                            <td>Shared responsibility model, relies on cloud provider's security measures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maintenance</strong></td>
+                            <td>Organization responsible for updates, patches, hardware replacement</td>
+                            <td>Cloud provider handles maintenance, updates, and infrastructure management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Location</strong></td>
+                            <td>Data stays within organization's physical premises</td>
+                            <td>Data stored in cloud provider's data centers globally</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>When to Use On-Premise:</h4>
+                <ul>
+                    <li><strong>Sensitive Data:</strong> Highly confidential or regulated data that must stay within organization boundaries</li>
+                    <li><strong>Compliance Requirements:</strong> Strict regulatory requirements that mandate on-premise data storage</li>
+                    <li><strong>Predictable Workloads:</strong> Consistent resource usage patterns with minimal variation</li>
+                    <li><strong>Complete Control:</strong> Need for full control over hardware, software, and security configurations</li>
+                </ul>
+
+                <h4>When to Use Cloud:</h4>
+                <ul>
+                    <li><strong>Variable Workloads:</strong> Fluctuating resource demands that benefit from elastic scaling</li>
+                    <li><strong>Rapid Deployment:</strong> Need to quickly provision resources and deploy applications</li>
+                    <li><strong>Cost Optimization:</strong> Want to avoid large capital expenditures and pay only for resources used</li>
+                    <li><strong>Global Accessibility:</strong> Require access to data and applications from multiple geographic locations</li>
+                </ul>
+
                 <div class="info-box">
-                    <p><strong>Cloud Storage Economics:</strong> Modern organizations store approximately 90% of their data in cloud environments, with only 10% remaining in on-premises systems for regulatory or security reasons. This shift has dramatically reduced storage costs while enabling unprecedented scalability and global accessibility.</p>
+                    <p><strong>Current Industry Trend:</strong> 90% of data is stored in cloud, 10% sensitive data kept on-premises. This hybrid approach allows organizations to leverage cloud benefits while maintaining control over critical data.</p>
                 </div>
 
-                <h3>Major Cloud Platform Capabilities</h3>
+                <h3>What is Cloud Computing?</h3>
+                <p>Cloud computing is the delivery of computing services including servers, storage, databases, networking, software, analytics, and intelligence over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale. As an organization, demand varies so we can use as many resources as needed depending upon the workload from cloud platforms like Azure, AWS and GCP.</p>
+
+                <h4>Cloud Computing Benefits:</h4>
+                <ul>
+                    <li><strong>Cost Efficiency:</strong> Eliminate capital expenditure on hardware and software, pay only for resources consumed</li>
+                    <li><strong>Scalability:</strong> Instantly scale computing resources up or down based on demand without infrastructure planning</li>
+                    <li><strong>Global Accessibility:</strong> Access applications and data from anywhere with internet connectivity</li>
+                    <li><strong>Automatic Updates:</strong> Cloud providers handle software updates, security patches, and infrastructure maintenance</li>
+                    <li><strong>Disaster Recovery:</strong> Built-in backup and recovery capabilities with geographic redundancy</li>
+                    <li><strong>Innovation Speed:</strong> Rapid deployment of new services and technologies without hardware procurement delays</li>
+                    <li><strong>Resource Optimization:</strong> Efficient resource utilization through shared infrastructure and automated management</li>
+                    <li><strong>Reduced IT Burden:</strong> Minimize internal IT infrastructure management and focus on core business objectives</li>
+                    <li><strong>Enhanced Security:</strong> Enterprise-grade security measures and compliance certifications from cloud providers</li>
+                    <li><strong>Environmental Impact:</strong> Reduced carbon footprint through shared, optimized data center resources</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Note:</strong> Cloud Storage is very cheap because of data lakes! Everything like storage and compute operates from cloud servers.</p>
+                </div>
+
+                <h3>Major Cloud Platforms</h3>
+                <p>The cloud computing market is dominated by three major providers, each offering comprehensive data engineering services:</p>
+
                 <div class="tech-stack">
-                    <div class="tech-card">
+                    <div class="tech-card" style="border-left: 5px solid #0078D4;">
                         <h4>Microsoft Azure</h4>
-                        <p><strong>Enterprise Integration:</strong> Seamless integration with Microsoft ecosystem including Office 365, Power BI, and Active Directory. Comprehensive data services including Azure Databricks, Data Factory, and Synapse Analytics.</p>
+                        <p><strong>Enterprise Integration Leader:</strong> Comprehensive data platform with seamless integration to Microsoft ecosystem including Office 365, Power BI, and Active Directory. Strong enterprise focus with Azure Databricks, Data Factory, Synapse Analytics, and comprehensive AI/ML services.</p>
+                        <ul>
+                            <li>Azure Data Factory for ETL/ELT operations</li>
+                            <li>Azure Databricks for big data processing</li>
+                            <li>Azure Synapse Analytics for data warehousing</li>
+                            <li>Power BI for business intelligence and reporting</li>
+                        </ul>
                     </div>
-                    <div class="tech-card">
-                        <h4>Amazon Web Services</h4>
-                        <p><strong>Market Leadership:</strong> Most mature cloud platform with extensive data services portfolio including EMR, Glue, Redshift, and comprehensive machine learning capabilities through SageMaker.</p>
+                    
+                    <div class="tech-card" style="border-left: 5px solid #FF9900;">
+                        <h4>Amazon Web Services (AWS)</h4>
+                        <p><strong>Market Leader:</strong> Most mature and comprehensive cloud platform with the largest market share and extensive data services portfolio. Offers robust big data solutions including EMR, Glue, Redshift, and comprehensive machine learning capabilities through SageMaker.</p>
+                        <ul>
+                            <li>Amazon EMR for big data processing</li>
+                            <li>AWS Glue for data integration and ETL</li>
+                            <li>Amazon Redshift for data warehousing</li>
+                            <li>Amazon S3 for object storage and data lakes</li>
+                        </ul>
                     </div>
-                    <div class="tech-card">
-                        <h4>Google Cloud Platform</h4>
-                        <p><strong>Analytics Excellence:</strong> Leading analytics capabilities with BigQuery, Dataflow, and advanced AI/ML services. Strong integration with Google's data and analytics ecosystem.</p>
+                    
+                    <div class="tech-card" style="border-left: 5px solid #4285F4;">
+                        <h4>Google Cloud Platform (GCP)</h4>
+                        <p><strong>Analytics Excellence:</strong> Leading analytics and machine learning capabilities with BigQuery, Dataflow, and advanced AI/ML services. Strong integration with Google's data and analytics ecosystem, particularly powerful for data science and ML workloads.</p>
+                        <ul>
+                            <li>Google BigQuery for serverless data warehousing</li>
+                            <li>Google Dataflow for stream and batch processing</li>
+                            <li>Google Cloud Storage for object storage</li>
+                            <li>Google AI Platform for machine learning</li>
+                        </ul>
                     </div>
                 </div>
-
-                <h3>Cloud Computing Strategic Advantages</h3>
-                <ul>
-                    <li><strong>Dynamic Scalability:</strong> Automatically scale compute and storage resources based on demand patterns and workload requirements</li>
-                    <li><strong>Cost Optimization:</strong> Pay-as-you-go pricing models eliminate capital expenditure and reduce operational costs</li>
-                    <li><strong>Global Accessibility:</strong> Access data and applications from anywhere with internet connectivity and appropriate security controls</li>
-                    <li><strong>Managed Services:</strong> Leverage cloud provider expertise for infrastructure management, reducing operational overhead</li>
-                    <li><strong>Elastic Computing:</strong> Provision resources instantly and release them when no longer needed</li>
-                    <li><strong>Built-in Redundancy:</strong> Automatic data replication and disaster recovery capabilities across multiple geographic regions</li>
-                    <li><strong>Innovation Access:</strong> Immediate access to cutting-edge technologies and services as they become available</li>
-                </ul>
-
-                <h3>Cloud Data Service Categories</h3>
-
-                <h4>Storage and Data Management</h4>
-                <ul>
-                    <li><strong>Object Storage:</strong> Scalable storage for unstructured data including Azure Blob Storage, AWS S3, and Google Cloud Storage</li>
-                    <li><strong>Managed Databases:</strong> Fully managed relational and NoSQL database services with automatic scaling and maintenance</li>
-                    <li><strong>Data Warehouses:</strong> Cloud-native analytical databases including Azure Synapse, Amazon Redshift, and Google BigQuery</li>
-                    <li><strong>Data Lakes:</strong> Centralized repositories supporting multiple data formats and analytical workloads</li>
-                </ul>
-
-                <h4>Processing and Analytics</h4>
-                <ul>
-                    <li><strong>ETL Services:</strong> Managed data integration platforms including Azure Data Factory, AWS Glue, and Google Dataflow</li>
-                    <li><strong>Analytics Engines:</strong> Distributed computing platforms such as Databricks, Amazon EMR, and Google Dataproc</li>
-                    <li><strong>Stream Processing:</strong> Real-time data processing services for handling continuous data streams</li>
-                    <li><strong>Machine Learning:</strong> Comprehensive ML platforms with automated model training and deployment capabilities</li>
-                </ul>
-
-                <h4>Governance and Security</h4>
-                <ul>
-                    <li><strong>Data Cataloging:</strong> Automated data discovery and metadata management services</li>
-                    <li><strong>Security Controls:</strong> Enterprise-grade encryption, access management, and compliance frameworks</li>
-                    <li><strong>Monitoring and Compliance:</strong> Comprehensive auditing and regulatory compliance support</li>
-                    <li><strong>Data Privacy:</strong> Advanced privacy controls and data residency management capabilities</li>
-                </ul>
             </section>
 
             <!-- Azure Data Engineering Stack -->
             <section id="azure-stack" class="section">
                 <h2>Azure Data Engineering Stack</h2>
-
+                <h3 style="text-align: color: #2a5298">Microsoft Azure Databricks Modern Analytics Architecture</h3>
                 <div class="architecture-diagram">
-                    <svg class="architecture-svg" viewBox="0 0 800 400">
-                        <defs>
-                            <linearGradient id="azure-blue" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0078D4;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#005A9E;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="azure-orange" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FF8C00;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="azure-green" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#107C10;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#0E5A0E;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        
-                        <!-- Data Sources -->
-                        <rect x="20" y="50" width="100" height="60" rx="5" fill="url(#azure-blue)" />
-                        <text x="70" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Data Sources</text>
-                        <text x="70" y="90" text-anchor="middle" fill="white" font-size="8">OLTP, APIs, Files</text>
-                        
-                        <!-- Event Hubs -->
-                        <rect x="160" y="50" width="100" height="60" rx="5" fill="url(#azure-orange)" />
-                        <text x="210" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Event Hubs</text>
-                        <text x="210" y="90" text-anchor="middle" fill="white" font-size="8">Streaming Ingestion</text>
-                        
-                        <!-- Data Lake -->
-                        <rect x="300" y="50" width="100" height="60" rx="5" fill="url(#azure-blue)" />
-                        <text x="350" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Data Lake Gen2</text>
-                        <text x="350" y="90" text-anchor="middle" fill="white" font-size="8">Raw Storage</text>
-                        
-                        <!-- Databricks -->
-                        <rect x="440" y="50" width="100" height="60" rx="5" fill="url(#azure-orange)" />
-                        <text x="490" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Databricks</text>
-                        <text x="490" y="90" text-anchor="middle" fill="white" font-size="8">Processing & ML</text>
-                        
-                        <!-- Synapse -->
-                        <rect x="580" y="50" width="100" height="60" rx="5" fill="url(#azure-blue)" />
-                        <text x="630" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Synapse</text>
-                        <text x="630" y="90" text-anchor="middle" fill="white" font-size="8">Data Warehouse</text>
-                        
-                        <!-- Power BI -->
-                        <rect x="720" y="50" width="60" height="60" rx="5" fill="url(#azure-green)" />
-                        <text x="750" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Power BI</text>
-                        <text x="750" y="90" text-anchor="middle" fill="white" font-size="8">Visualization</text>
-                        
-                        <!-- Data Factory -->
-                        <rect x="250" y="150" width="200" height="40" rx="5" fill="#6B46C1" />
-                        <text x="350" y="175" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Azure Data Factory - Orchestration</text>
-                        
-                        <!-- Support Services -->
-                        <rect x="50" y="250" width="700" height="80" rx="5" fill="#374151" />
-                        <text x="400" y="275" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Azure Support Services</text>
-                        <text x="150" y="295" text-anchor="middle" fill="white" font-size="10">Key Vault</text>
-                        <text x="250" y="295" text-anchor="middle" fill="white" font-size="10">Active Directory</text>
-                        <text x="350" y="295" text-anchor="middle" fill="white" font-size="10">Monitor</text>
-                        <text x="450" y="295" text-anchor="middle" fill="white" font-size="10">Purview</text>
-                        <text x="550" y="295" text-anchor="middle" fill="white" font-size="10">DevOps</text>
-                        <text x="650" y="295" text-anchor="middle" fill="white" font-size="10">Cost Management</text>
-                        
-                        <!-- Flow Arrows -->
-                        <defs>
-                            <marker id="azure-arrow" markerWidth="8" markerHeight="6" 
-                             refX="7" refY="3" orient="auto">
-                                <polygon points="0 0, 8 3, 0 6" fill="#333" />
-                            </marker>
-                        </defs>
-                        
-                        <line x1="125" y1="80" x2="155" y2="80" stroke="#333" stroke-width="2" marker-end="url(#azure-arrow)" />
-                        <line x1="265" y1="80" x2="295" y2="80" stroke="#333" stroke-width="2" marker-end="url(#azure-arrow)" />
-                        <line x1="405" y1="80" x2="435" y2="80" stroke="#333" stroke-width="2" marker-end="url(#azure-arrow)" />
-                        <line x1="545" y1="80" x2="575" y2="80" stroke="#333" stroke-width="2" marker-end="url(#azure-arrow)" />
-                        <line x1="685" y1="80" x2="715" y2="80" stroke="#333" stroke-width="2" marker-end="url(#azure-arrow)" />
-                        
-                        <text x="400" y="25" text-anchor="middle" font-weight="bold" font-size="16" fill="#333">Azure Modern Data Platform Architecture</text>
-                    </svg>
-                    <div class="caption">Comprehensive Azure data services integration (Diagram based on Microsoft Learn architecture patterns)</div>
+                    <img src="https://raw.githubusercontent.com/siddhantsid2199/Fundamentals-of-Data-Engineering-HTML-Page-/8aeb19661ea07430b3f8608e05b4aa94b867bb21/1_6kUmwAAEjMD7clBmb3dr2Q.png" alt="Azure Data Engineering Stack" />
+                    <div class="caption">Azure Data Engineering Stack Overview</div>
+                </div>
+    
+
+                <div class="architecture-diagram" style="background: #ffffff; padding: 2rem; border-radius: 15px;">
+                    
+
+                <h3>Understanding the Azure Data Pipeline Architecture</h3>
+                
+                <div class="info-box">
+                    <p>This Microsoft-recommended architecture demonstrates a complete modern analytics platform built on Azure Databricks at its core, seamlessly integrated with Azure services for data ingestion, processing, storage, and serving.</p>
                 </div>
 
-                <h3>Core Azure Data Services</h3>
+                <h4>Data Flow Stages</h4>
 
-                <h4>Data Ingestion and Streaming</h4>
+<style>
+/* Style for numbered section headings */
+h5.section-heading {
+  font-size: 1.6rem;    /* larger size */
+  font-weight: 700;     /* bold */
+  color: #2a5298;       /* consistent theme color */
+  margin: 1.5rem 0 1rem 0;
+}
+</style>
+
+<h4>Data Flow Stages</h4>
+
+<h5 class="section-heading">1. Data Sources and Ingestion</h5>
+<p>The architecture begins with diverse data sources feeding into the platform:</p>
+<p><strong>Streaming Data:</strong> Azure Event Hubs ingests real-time streaming data using Delta Live Tables in Azure Databricks. This handles millions of events per second from IoT devices, applications, and clickstreams.</p>
+<p><strong>Batch Data:</strong> Microsoft Fabric Data Factory loads batch data directly into Azure Data Lake Storage. This includes files, databases, and scheduled data transfers from various systems.</p>
+
+<h5 class="section-heading">2. Processing Layer - Azure Databricks</h5>
+<p>Azure Databricks serves as the central processing engine with multiple capabilities:</p>
+<p><strong>Delta Live Tables:</strong> Declarative framework for building reliable, maintainable data pipelines with automatic error handling and quality checks.</p>
+<p><strong>Apache Spark:</strong> Distributed processing engine for large-scale data transformation.</p>
+<p><strong>MLflow:</strong> Machine learning lifecycle management for tracking experiments, models, and deployments.</p>
+<p><strong>Collaborative Notebooks:</strong> Support for SQL, Python, R, and Scala with pre-installed libraries like Pandas and scikit-learn.</p>
+
+<h5 class="section-heading">3. Storage Layer - Medallion Architecture</h5>
+<p>Azure Data Lake Storage Gen2 implements the medallion architecture with Delta Lake format:</p>
+<div class="tech-stack">
+  <div class="tech-card" style="border-left: 5px solid #cd7f32;">
+    <h4>Bronze Layer</h4>
+    <p>Raw data ingestion zone storing data in its original format. Maintains full fidelity and history of source data.</p>
+  </div>
+  <div class="tech-card" style="border-left: 5px solid #c0c0c0;">
+    <h4>Silver Layer</h4>
+    <p>Cleaned and validated data with standardized formats. Data is deduplicated, validated, and enriched for enterprise consumption.</p>
+  </div>
+  <div class="tech-card" style="border-left: 5px solid #ffd700;">
+    <h4>Gold Layer</h4>
+    <p>Business-ready aggregates optimized for specific use cases. Contains curated datasets for analytics and reporting.</p>
+  </div>
+</div>
+
+<h5 class="section-heading">4. Serving Layer</h5>
+<p>Processed data serves multiple consumption patterns:</p>
+<p><strong>Azure Databricks SQL Warehouses:</strong> SQL analytics with Photon-powered Delta Engine for high-performance queries.</p>
+<p><strong>Power BI:</strong> Business intelligence and visualization with Direct Lake mode for optimal performance through Fabric mirroring.</p>
+<p><strong>Azure Machine Learning:</strong> Model deployment and serving for real-time predictions.</p>
+<p><strong>Azure Kubernetes Service (AKS):</strong> Container-based deployment for scalable ML model serving.</p>
+
+<h5 class="section-heading">5. Governance and Security Layer</h5>
+<p>Comprehensive governance spans the entire architecture:</p>
+<p><strong>Unity Catalog:</strong> Centralized data governance with fine-grained access control, auditing, and lineage tracking across workspaces.</p>
+<p><strong>Microsoft Purview:</strong> Enterprise data catalog with automated discovery, classification, and compliance management.</p>
+<p><strong>Azure Key Vault:</strong> Secure storage for credentials, keys, and certificates.</p>
+<p><strong>Microsoft Entra ID (Azure AD):</strong> Identity management with SCIM provisioning for automated user lifecycle.</p>
+<p><strong>Azure Monitor:</strong> Comprehensive monitoring, logging, and alerting for all components.</p>
+<p><strong>Azure DevOps:</strong> CI/CD pipelines for infrastructure and code deployment.</p>
+<p><strong>Cost Management:</strong> Financial governance and optimization recommendations.</p>
+
+
+
+
+                <h3>Key Azure Services in Detail</h3>
+
                 <div class="tech-stack">
                     <div class="tech-card">
                         <h4>Azure Event Hubs</h4>
-                        <p><strong>Hyper-Scale Event Streaming:</strong> Processes millions of events per second with guaranteed durability and low latency. Supports real-time analytics, monitoring, and IoT data ingestion with automatic scaling and partitioning.</p>
+                        <p><strong>Role:</strong> Real-time event ingestion</p>
+                        <p><strong>Capabilities:</strong> Processes millions of events per second, supports Kafka protocol, auto-scaling, and geo-disaster recovery</p>
+                        <p><strong>Use Case:</strong> IoT telemetry, application logs, clickstream data</p>
                     </div>
+                    
                     <div class="tech-card">
-                        <h4>Azure Data Factory</h4>
-                        <p><strong>Hybrid Data Integration:</strong> Cloud-native ETL/ELT service supporting 100+ data connectors. Provides visual interface for pipeline development with advanced scheduling, monitoring, and error handling capabilities.</p>
+                        <h4>Azure Databricks</h4>
+                        <p><strong>Role:</strong> Unified analytics platform</p>
+                        <p><strong>Capabilities:</strong> Apache Spark processing, Delta Lake, collaborative notebooks, AutoML, and SQL analytics</p>
+                        <p><strong>Use Case:</strong> ETL/ELT, data science, machine learning, streaming analytics</p>
                     </div>
-                </div>
-
-                <h4>Storage and Data Management</h4>
-                <div class="tech-stack">
+                    
                     <div class="tech-card">
                         <h4>Azure Data Lake Storage Gen2</h4>
-                        <p><strong>Unlimited Scale Storage:</strong> Hierarchical namespace supporting structured, semi-structured, and unstructured data. Integrates seamlessly with analytics services while providing enterprise-grade security and compliance features.</p>
+                        <p><strong>Role:</strong> Scalable data repository</p>
+                        <p><strong>Capabilities:</strong> Hierarchical namespace, POSIX permissions, multi-protocol access, and cost-effective storage tiers</p>
+                        <p><strong>Use Case:</strong> Data lake implementation with Bronze/Silver/Gold zones</p>
                     </div>
+                    
                     <div class="tech-card">
-                        <h4>Azure SQL Database</h4>
-                        <p><strong>Intelligent Database Service:</strong> Fully managed relational database with built-in AI capabilities. Provides automatic tuning, scaling, and security features with 99.99% availability SLA.</p>
+                        <h4>Microsoft Fabric</h4>
+                        <p><strong>Role:</strong> Unified analytics platform</p>
+                        <p><strong>Capabilities:</strong> Data Factory, Data Engineering, Data Science, Real-Time Intelligence, Data Warehouse, and OneLake storage</p>
+                        <p><strong>Use Case:</strong> End-to-end analytics with integrated experiences</p>
                     </div>
-                </div>
-
-                <h4>Processing and Analytics</h4>
-                <div class="tech-stack">
+                    
                     <div class="tech-card">
-                        <h4>Azure Databricks</h4>
-                        <p><strong>Unified Analytics Platform:</strong> Apache Spark-based service optimized for Azure with collaborative notebooks, automated cluster management, and integrated MLflow for machine learning lifecycle management.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Azure Synapse Analytics</h4>
-                        <p><strong>Enterprise Data Warehouse:</strong> Massively parallel processing (MPP) architecture supporting unlimited analytics scale. Integrates with Power BI and machine learning services for comprehensive business intelligence solutions.</p>
-                    </div>
-                </div>
-
-                <h4>Business Intelligence and Visualization</h4>
-                <div class="tech-stack">
-                    <div class="tech-card">
-                        <h4>Microsoft Power BI</h4>
-                        <p><strong>Self-Service Analytics:</strong> Comprehensive business intelligence platform with interactive dashboards, natural language queries, and automated insights. Supports real-time data connections and mobile accessibility.</p>
-                    </div>
-                </div>
-
-                <h3>Azure Storage Architecture</h3>
-                <div class="info-box">
-                    <p><strong>Hierarchical Namespace Benefits:</strong> Azure Data Lake Storage Gen2 implements a hierarchical file system that enables efficient big data processing. This structure supports POSIX-compliant operations while maintaining object storage benefits including unlimited scalability and cost-effectiveness.</p>
-                </div>
-
-                <p>Azure organizes data storage in a logical hierarchy optimized for both traditional file operations and modern big data analytics:</p>
-                
-                <ol>
-                    <li><strong>Storage Account:</strong> Top-level container providing namespace and management boundary for all storage resources</li>
-                    <li><strong>Containers:</strong> Logical groupings equivalent to file system directories with security and access control capabilities</li>
-                    <li><strong>Directory Structure:</strong> Nested folder organization supporting traditional file system operations</li>
-                    <li><strong>Files and Blobs:</strong> Individual data objects with rich metadata and version control capabilities</li>
-                </ol>
-
-                <h3>Modern Azure Data Pipeline Architecture</h3>
-                <div class="data-flow">
-                    <div class="flow-step">
-                        <h4>Source Systems</h4>
-                        <p>OLTP databases, SaaS applications, IoT devices</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <h4>Azure Event Hubs</h4>
-                        <p>Real-time event ingestion and buffering</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <h4>Data Lake Gen2</h4>
-                        <p>Scalable raw data storage with metadata</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <h4>Azure Databricks</h4>
-                        <p>Data processing and machine learning</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <h4>Synapse Analytics</h4>
-                        <p>Enterprise data warehousing</p>
-                    </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
                         <h4>Power BI</h4>
-                        <p>Business intelligence and reporting</p>
+                        <p><strong>Role:</strong> Business intelligence and visualization</p>
+                        <p><strong>Capabilities:</strong> Interactive dashboards, paginated reports, Direct Lake mode, AI-powered insights</p>
+                        <p><strong>Use Case:</strong> Self-service analytics, executive dashboards, operational reporting</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Azure Machine Learning</h4>
+                        <p><strong>Role:</strong> ML platform</p>
+                        <p><strong>Capabilities:</strong> AutoML, MLOps, model registry, managed endpoints, responsible AI tools</p>
+                        <p><strong>Use Case:</strong> Model training, deployment, and lifecycle management</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Unity Catalog</h4>
+                        <p><strong>Role:</strong> Data governance</p>
+                        <p><strong>Capabilities:</strong> Unified metadata, row/column-level security, data lineage, access auditing</p>
+                        <p><strong>Use Case:</strong> Enterprise data governance across all data assets</p>
+                    </div>
+                    
+                    <div class="tech-card">
+                        <h4>Microsoft Purview</h4>
+                        <p><strong>Role:</strong> Data governance and compliance</p>
+                        <p><strong>Capabilities:</strong> Data discovery, classification, lineage visualization, compliance insights</p>
+                        <p><strong>Use Case:</strong> Enterprise-wide data catalog and governance</p>
                     </div>
                 </div>
 
-                <h3>Azure Data Engineering Best Practices</h3>
-                <ul>
-                    <li><strong>Security Implementation:</strong> Use Azure Active Directory for identity management and Key Vault for secrets management</li>
-                    <li><strong>Cost Optimization:</strong> Implement automated scaling, reserved instances, and lifecycle management policies</li>
-                    <li><strong>Performance Monitoring:</strong> Deploy Azure Monitor and Application Insights for comprehensive telemetry</li>
-                    <li><strong>Data Governance:</strong> Utilize Microsoft Purview for data cataloging, lineage tracking, and compliance management</li>
-                    <li><strong>Disaster Recovery:</strong> Configure geo-redundant storage and cross-region replication for business continuity</li>
-                    <li><strong>DevOps Integration:</strong> Implement CI/CD pipelines using Azure DevOps or GitHub Actions for infrastructure and code deployment</li>
-                </ul>
-            </section>
+                <div class="highlight-box">
+                    
 
-            <div class="highlight-box" style="margin-top: 4rem;">
+            
                 <h4>Key Takeaways</h4>
-                <p>Data Engineering serves as the critical foundation for modern data-driven organizations. By mastering these fundamental concepts—from basic data workflows to sophisticated cloud architectures—professionals can design, implement, and maintain robust data systems that scale effectively with organizational growth.</p>
+                <p>Data Engineering serves as the critical foundation for modern data-driven organizations. By understanding these fundamental concepts, from basic data workflows to sophisticated cloud architectures, professionals can design, implement, and maintain robust data systems that scale effectively with organizational growth.</p>
                 
                 <p>The discipline continues evolving with emerging technologies and architectural patterns, but core principles remain consistent: <strong>reliable data ingestion, systematic transformation, efficient storage, and accessible data serving</strong> to enable informed decision-making across all organizational levels.</p>
             </div>
@@ -1448,7 +1798,7 @@
 
         <footer class="footer">
             <p>&copy; 2024 Fundamentals of Data Engineering - Comprehensive guide to modern data engineering practices and technologies.</p>
-            <p><em>Architecture diagrams and concepts sourced from official Databricks and Microsoft Learn documentation</em></p>
+            <p><em>Content based on comprehensive data engineering study materials and official documentation</em></p>
         </footer>
     </div>
 
