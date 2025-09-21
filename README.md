@@ -27,4 +27,4 @@ The guide provides detailed explanations and diagrams on the following topics:
 
 ## About the Author
 
-This guide was developed by **Siddhant Singh**, a Data Professional, to provide a clear and structured resource for the data community. You can connect with him on [LinkedIn](https://www.linkedin.com/in/siddhantsingh21/).
+This guide was written and design by **Siddhant Singh** (with the help of numerous article, youtube videos available), a Data Professional, to provide a clear and structured resource for the data community. You can connect with me on LinkedIn: (https://www.linkedin.com/in/siddhantsingh21/)
